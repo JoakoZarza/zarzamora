@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Train · Android APK - Zarzamora</title>
+<!-- Google Fonts: Bricolage Grotesque & Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&amp;family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#170A21",
+            "surface": "#170A21",
+            "surface-card": "#22122F",
+            "card-border": "#3B1D54",
+            "text-primary": "#F3EEF8",
+            "text-muted": "#B39FC7",
+            "accent-lima": "#B8E62E",
+            "accent-purple": "#A57BEA",
+            "accent-mostaza": "#FFCF68",
+            "accent-mostaza-text": "#775700",
+            "badge-step": "#3B1D54"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Bricolage Grotesque", "sans-serif"],
+            "label-md": ["Hanken Grotesk", "sans-serif"],
+            "headline-lg-mobile": ["Bricolage Grotesque", "sans-serif"],
+            "body-lg": ["Hanken Grotesk", "sans-serif"],
+            "body-sm": ["Hanken Grotesk", "sans-serif"],
+            "headline-sm": ["Bricolage Grotesque", "sans-serif"],
+            "body-md": ["Hanken Grotesk", "sans-serif"],
+            "display-hero-mobile": ["Bricolage Grotesque", "sans-serif"],
+            "headline-md": ["Bricolage Grotesque", "sans-serif"],
+            "label-lg": ["Hanken Grotesk", "sans-serif"],
+            "display-hero": ["Bricolage Grotesque", "sans-serif"],
+            "label-sm": ["Hanken Grotesk", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased font-body-md flex justify-center selection:bg-accent-lima selection:text-background min-h-screen">
+<!-- Mobile Viewport Container: 390px locked -->
+<div class="w-full max-w-[390px] bg-background min-h-screen flex flex-col relative pb-32">
+<!-- 1. Top Bar / App Navigation Header -->
+<header class="sticky top-0 z-40 bg-background/95 backdrop-blur-md border-b border-card-border flex justify-between items-center w-full px-margin-mobile py-space-sm">
+<a class="inline-flex items-center gap-1 text-accent-purple hover:text-text-primary transition-colors font-label-md text-label-md py-1" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Apps</span>
+</a>
+<!-- Zarzamora Brand Identity -->
+<a class="flex items-center gap-1.5 focus:outline-none" href="#">
+<div class="relative w-5 h-5 flex items-center justify-center">
+<!-- Stylized blackberry clusters -->
+<div class="w-2.5 h-2.5 rounded-full bg-accent-purple absolute top-0 left-0"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-[#5A309C] absolute top-1 right-0"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-[#8E44EC] absolute bottom-0 left-1"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-accent-lima absolute -top-1 left-1.5 rotate-45"></div>
+</div>
+<span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">zarzamora</span>
+</a>
+<button aria-label="Compartir app" class="w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:bg-surface-card transition-colors active:-translate-y-0.5" type="button">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile pt-space-md flex flex-col gap-space-lg">
+<!-- 2. Hero Section: Android App Profile -->
+<section class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-start gap-space-md">
+<!-- Squircle App Icon -->
+<div class="w-20 h-20 rounded-[22px] bg-[#3B1D54] flex-shrink-0 flex items-center justify-center border border-card-border relative overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-[#5A309C] opacity-40"></div>
+<!-- Barbell Fitness Graphic -->
+<span class="material-symbols-outlined text-accent-lima text-[42px] relative z-10" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+<!-- Title & Badges -->
+<div class="flex flex-col gap-1.5 flex-1">
+<div class="flex items-center justify-between">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary tracking-tight">Train</h1>
+<!-- Beta Badge in Mostaza / Tertiary -->
+<span class="px-2.5 py-0.5 rounded-full bg-accent-mostaza text-accent-mostaza-text font-label-sm text-label-sm font-bold tracking-wide">
+                Beta · APK
+              </span>
+</div>
+<p class="font-label-md text-label-md text-text-muted font-medium">Por Joako Zarza</p>
+<div class="flex items-center gap-1.5 text-accent-lima font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>100% Código Abierto</span>
+</div>
+</div>
+</div>
+<!-- Tagline with local tone -->
+<p class="font-body-md text-body-md text-text-primary mt-1">
+          Entrenamiento de CrossFit y gimnasio con sobrecarga progresiva sin distracciones.
+        </p>
+<!-- Feature Chips Shelf -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-3 py-1 rounded-full bg-[#2E183F] border border-card-border text-accent-purple font-label-md text-label-md">
+            Android APK
+          </span>
+<span class="px-3 py-1 rounded-full bg-[#2E183F] border border-card-border text-accent-purple font-label-md text-label-md">
+            Fitness &amp; WODs
+          </span>
+<span class="px-3 py-1 rounded-full bg-[#2E183F] border border-card-border text-accent-purple font-label-md text-label-md">
+            100% Offline
+          </span>
+<span class="px-3 py-1 rounded-full bg-[#2E183F] border border-card-border text-accent-purple font-label-md text-label-md">
+            Sin anuncios
+          </span>
+</div>
+</section>
+<!-- 3. Technical Metrics Bar -->
+<section class="bg-surface-card border border-card-border rounded-DEFAULT p-space-sm grid grid-cols-4 divide-x divide-card-border text-center">
+<div class="flex flex-col px-1">
+<span class="font-label-sm text-label-sm text-text-muted">Versión</span>
+<span class="font-headline-sm text-headline-sm text-text-primary mt-0.5">v1.2</span>
+</div>
+<div class="flex flex-col px-1">
+<span class="font-label-sm text-label-sm text-text-muted">Actualizada</span>
+<span class="font-headline-sm text-headline-sm text-text-primary mt-0.5">28 Sep</span>
+</div>
+<div class="flex flex-col px-1">
+<span class="font-label-sm text-label-sm text-text-muted">Tamaño</span>
+<span class="font-headline-sm text-headline-sm text-text-primary mt-0.5">14 MB</span>
+</div>
+<div class="flex flex-col px-1">
+<span class="font-label-sm text-label-sm text-text-muted">Requiere</span>
+<span class="font-headline-sm text-headline-sm text-text-primary mt-0.5">Android 10+</span>
+</div>
+</section>
+<!-- 4. Media Carousel (Native Phone App Screenshots) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex justify-between items-baseline">
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Capturas de pantalla</h2>
+<span class="font-label-sm text-label-sm text-text-muted">Deslizá para ver</span>
+</div>
+<div class="flex gap-space-sm overflow-x-auto no-scrollbar -mx-margin-mobile px-margin-mobile pb-1 snap-x snap-mandatory">
+<!-- Screenshot 1: WOD Timer -->
+<div class="w-[220px] flex-shrink-0 snap-start bg-surface-card rounded-DEFAULT border border-card-border overflow-hidden flex flex-col">
+<div class="h-[320px] bg-[#15091F] p-4 flex flex-col justify-between text-text-primary relative">
+<div class="flex justify-between items-center text-xs font-label-md opacity-75">
+<span>AMRAP 20 MIN</span>
+<span class="bg-[#3B1D54] px-2 py-0.5 rounded text-accent-purple font-semibold">RONDA 4</span>
+</div>
+<div class="text-center my-auto">
+<div class="font-headline-lg text-accent-lima tracking-tighter text-4xl">14:28</div>
+<div class="text-label-sm text-accent-purple tracking-widest mt-1 uppercase">Descanso en 0:32</div>
+</div>
+<div class="bg-surface-card/60 rounded-lg p-2.5 flex flex-col gap-1 border border-card-border text-xs">
+<span class="font-semibold text-accent-lima">Siguiente ejercicio:</span>
+<span class="text-text-muted">15 Box Jumps (60cm) + 12 Toes-to-bar</span>
+</div>
+</div>
+<div class="p-3 bg-surface-card border-t border-card-border">
+<p class="font-label-md text-label-md text-text-primary font-semibold">Timer de WODs</p>
+<p class="font-body-sm text-body-sm text-text-muted text-xs">AMRAP, EMOM y For Time sin pausas.</p>
+</div>
+</div>
+<!-- Screenshot 2: 1RM Progression Charts -->
+<div class="w-[220px] flex-shrink-0 snap-start bg-surface-card rounded-DEFAULT border border-card-border overflow-hidden flex flex-col">
+<div class="h-[320px] bg-[#13071C] p-4 flex flex-col justify-between text-text-primary">
+<div class="flex justify-between items-center text-xs font-label-md">
+<span class="text-accent-purple font-bold">DEADLIFT 1RM</span>
+<span class="text-accent-lima">+12.5 kg</span>
+</div>
+<!-- Mock Chart graphic -->
+<div class="my-auto h-28 flex items-end justify-between gap-2 px-1 border-b border-card-border pb-1">
+<div class="w-1/5 bg-[#5A309C] rounded-t h-[40%]"></div>
+<div class="w-1/5 bg-[#6B2BC2] rounded-t h-[55%]"></div>
+<div class="w-1/5 bg-[#7E3FD6] rounded-t h-[65%]"></div>
+<div class="w-1/5 bg-accent-purple rounded-t h-[75%]"></div>
+<div class="w-1/5 bg-accent-lima rounded-t h-[95%]"></div>
+</div>
+<div class="bg-[#1C0D27] p-2 rounded border border-card-border text-xs flex justify-between items-center">
+<span class="text-text-muted">Récord personal:</span>
+<span class="font-bold text-accent-lima text-sm">160 kg</span>
+</div>
+</div>
+<div class="p-3 bg-surface-card border-t border-card-border">
+<p class="font-label-md text-label-md text-text-primary font-semibold">Progresión de 1RM</p>
+<p class="font-body-sm text-body-sm text-text-muted text-xs">Gráficos claros de tus marcas clave.</p>
+</div>
+</div>
+<!-- Screenshot 3: Movement Library -->
+<div class="w-[220px] flex-shrink-0 snap-start bg-surface-card rounded-DEFAULT border border-card-border overflow-hidden flex flex-col">
+<div class="h-[320px] bg-[#160B22] p-3 flex flex-col gap-2 overflow-hidden">
+<div class="text-xs font-bold text-accent-purple mb-1">BIBLIOTECA TÉCNICA</div>
+<div class="bg-[#241334] p-2 rounded-lg border border-card-border flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-lima text-xl">sports_gymnastics</span>
+<div class="text-xs">
+<p class="font-bold text-text-primary">Snatch (Arrancada)</p>
+<p class="text-[10px] text-text-muted">Halterofilia · 3 cues clave</p>
+</div>
+</div>
+<div class="bg-[#241334] p-2 rounded-lg border border-card-border flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-lima text-xl">accessibility_new</span>
+<div class="text-xs">
+<p class="font-bold text-text-primary">Clean &amp; Jerk</p>
+<p class="text-[10px] text-text-muted">Halterofilia · Codos rápidos</p>
+</div>
+</div>
+<div class="bg-[#241334] p-2 rounded-lg border border-card-border flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-lima text-xl">fitness_center</span>
+<div class="text-xs">
+<p class="font-bold text-text-primary">Front Squat</p>
+<p class="text-[10px] text-text-muted">Fuerza · Torso vertical</p>
+</div>
+</div>
+</div>
+<div class="p-3 bg-surface-card border-t border-card-border">
+<p class="font-label-md text-label-md text-text-primary font-semibold">Biblioteca de Técnica</p>
+<p class="font-body-sm text-body-sm text-text-muted text-xs">Consejos directos para el box.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. "Sobre esta app" & "Qué podés hacer" -->
+<section class="bg-surface-card border border-card-border rounded-DEFAULT p-space-md flex flex-col gap-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Sobre esta app</h2>
+<p class="font-body-md text-body-md text-text-muted mt-1.5 leading-relaxed">
+            Train nació en el box de CrossFit. Está pensada para que anotes tus series en menos de cinco segundos sin tener que bancarte videos de 30 segundos entre pausa y pausa. Sin cuentas obligatorias, sin suscripciones mensuales y con funcionamiento 100% desconectado.
+          </p>
+</div>
+<div class="border-t border-card-border pt-space-md flex flex-col gap-space-sm">
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold">Qué podés hacer con Train:</h3>
+<ul class="flex flex-col gap-2.5">
+<li class="flex items-start gap-2.5 text-text-muted font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-accent-lima text-[20px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span><strong class="text-text-primary">Registro veloz:</strong> Anotás peso y repeticiones en menos de 5 segundos con teclado numérico gigante adaptado a manos con magnesio.</span>
+</li>
+<li class="flex items-start gap-2.5 text-text-muted font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-accent-lima text-[20px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span><strong class="text-text-primary">Cronómetros de WOD:</strong> AMRAP, EMOM, Tabata y For Time con señales sonoras de conteo regresivo que se escuchan con música de fondo.</span>
+</li>
+<li class="flex items-start gap-2.5 text-text-muted font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-accent-lima text-[20px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span><strong class="text-text-primary">Tus datos son tuyos:</strong> Respaldo local instantáneo a archivo JSON en tu almacenamiento. Nada se envía a servidores externos.</span>
+</li>
+<li class="flex items-start gap-2.5 text-text-muted font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-accent-lima text-[20px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span><strong class="text-text-primary">Cero suscripción y sin anuncios:</strong> Todo disponible desde el primer día de entrenamiento.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- 6. Android Install Guide ("Cómo instalar el APK") -->
+<section class="bg-surface-card border border-card-border rounded-DEFAULT p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-2 text-accent-purple font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[24px]">android</span>
+<h2 class="text-text-primary">Cómo instalar el APK</h2>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">
+          Como es software independiente distribuido por fuera de Google Play Store, se instala directo en 3 pasos:
+        </p>
+<div class="flex flex-col gap-3 mt-1">
+<!-- Step 1 -->
+<div class="flex items-start gap-3 bg-[#1A0C26] p-3 rounded-lg border border-card-border">
+<span class="w-6 h-6 rounded-full bg-badge-step text-accent-purple font-bold text-xs flex items-center justify-center flex-shrink-0 border border-card-border">1</span>
+<div class="font-body-sm text-body-sm text-text-muted">
+              Tocá el botón <strong class="text-text-primary">"Descargar APK" (14 MB)</strong> de acá abajo.
+            </div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-3 bg-[#1A0C26] p-3 rounded-lg border border-card-border">
+<span class="w-6 h-6 rounded-full bg-badge-step text-accent-purple font-bold text-xs flex items-center justify-center flex-shrink-0 border border-card-border">2</span>
+<div class="font-body-sm text-body-sm text-text-muted">
+              En tu navegador (Chrome o Firefox), habilitá <strong class="text-text-primary">"Permitir desde esta fuente"</strong> si te pide autorización de seguridad.
+            </div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-3 bg-[#1A0C26] p-3 rounded-lg border border-card-border">
+<span class="w-6 h-6 rounded-full bg-badge-step text-accent-purple font-bold text-xs flex items-center justify-center flex-shrink-0 border border-card-border">3</span>
+<div class="font-body-sm text-body-sm text-text-muted">
+              Abrí la notificación de descarga y tocá <strong class="text-text-primary">"Instalar"</strong>. ¡Listo, a entrenar!
+            </div>
+</div>
+</div>
+</section>
+<!-- 7. "Cómo la hice" & Maker Quote -->
+<section class="bg-surface-card border border-card-border rounded-DEFAULT p-space-md flex flex-col gap-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Cómo la hice</h2>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2.5 py-1 rounded bg-[#1A0C26] text-accent-purple font-label-md text-label-md border border-card-border">
+              Flutter 3.22
+            </span>
+<span class="px-2.5 py-1 rounded bg-[#1A0C26] text-accent-purple font-label-md text-label-md border border-card-border">
+              SQLite Local
+            </span>
+<span class="px-2.5 py-1 rounded bg-[#1A0C26] text-accent-purple font-label-md text-label-md border border-card-border">
+              Claude Code
+            </span>
+<span class="px-2.5 py-1 rounded bg-[#1A0C26] text-accent-purple font-label-md text-label-md border border-card-border">
+              Dart
+            </span>
+</div>
+</div>
+<!-- Quote Block with Argentine voice -->
+<blockquote class="bg-[#1A0C26] p-3.5 rounded-lg border-l-4 border-accent-purple text-text-muted italic font-body-sm text-body-sm leading-relaxed">
+          «Me cansé de las apps de gimnasio llenas de publicidad invasiva entre serie y serie. Hice Train para registrar mis pesos en silencio, tomar el mate tranquilo y no perder foco en el box.»
+          <div class="mt-2 text-right not-italic font-label-sm text-label-sm text-accent-purple font-semibold">
+            — Joako Zarza, Creador
+          </div>
+</blockquote>
+</section>
+<!-- Verification / Checksum details -->
+<section class="text-center px-2 py-1 text-text-muted font-label-sm text-label-sm flex flex-col gap-1">
+<span>SHA-256: <code class="text-text-primary">e8b4...92f1</code> · Firma verificada</span>
+<a class="text-accent-purple hover:underline font-label-md text-label-md inline-flex items-center justify-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span>Ver código fuente en GitHub</span>
+</a>
+</section>
+</main>
+<!-- Footer from Shared Components -->
+<footer class="w-full mb-20 border-t border-card-border bg-surface-card flex flex-col items-center text-center px-margin-mobile py-space-xl gap-space-md max-w-[390px] mx-auto mt-space-xl">
+<div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+<a class="font-label-sm text-label-sm text-text-muted hover:text-accent-purple underline" href="#">Manifesto</a>
+<a class="font-label-sm text-label-sm text-text-muted hover:text-accent-purple underline" href="#">Código fuente</a>
+<a class="font-label-sm text-label-sm text-text-muted hover:text-accent-purple underline" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-text-muted hover:text-accent-purple underline" href="#">Contacto</a>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">
+        © 2024 Zarzamora por Joako Zarza. Hecho con software libre y mate.
+      </p>
+</footer>
+<!-- 8. Sticky Bottom Action Bar with Lima CTA (Task-Focused Detail Page) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+<div class="w-full max-w-[390px] bg-background/95 backdrop-blur-md border-t border-card-border p-margin-mobile pointer-events-auto shadow-2xl">
+<a class="w-full py-3.5 px-6 rounded-full bg-accent-lima text-background font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 hover:brightness-105 active:-translate-y-0.5 transition-all text-center" href="#descargar">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">download</span>
+<span>Descargar APK (14 MB) ↓</span>
+</a>
+<div class="text-center mt-1.5 font-label-sm text-label-sm text-text-muted">
+          Versión 1.2 · Libre de virus · Seguro para Android
+        </div>
+</div>
+</div>
+</div>
+</body></html>

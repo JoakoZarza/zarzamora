@@ -1,26 +1,164 @@
 @import "tailwindcss";
 
+/* Tokens de Zarzamora. El tema oscuro se activa por preferencia del sistema
+   o con data-theme="dark" en <html>. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --bg: #f7f4fb;
+  --surface: #ffffff;
+  --soft: #ede4f8;
+  --line: #e2d8ee;
+  --ink: #2a1238;
+  --muted: #6e5f7d;
+  --purple: #6b2bc2;
+  --on-purple: #ffffff;
+  --lime: #b8e62e;
+  --on-lime: #2a1238;
+  --mustard: #d4a017;
+  --mustard-soft: #f7ebc4;
+  --on-mustard-soft: #5c4300;
+  --band: #2a1238;
+  --on-band: #f3eef8;
+  --band-line: #4a2f5c;
+  --drupe-a: #6b2bc2;
+  --drupe-b: #2a1238;
+  --drupe-c: #4b1d8c;
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --bg: #170a21;
+    --surface: #22122f;
+    --soft: #2f1a42;
+    --line: #3b244c;
+    --ink: #f3eef8;
+    --muted: #b9a8c9;
+    --purple: #a57bea;
+    --on-purple: #170a21;
+    --mustard-soft: #3a2c10;
+    --on-mustard-soft: #f0c14b;
+    --band: #22122f;
+    --band-line: #3b244c;
+    --drupe-a: #7c3ad6;
+    --drupe-b: #3b1d52;
+    --drupe-c: #5a27a3;
+    color-scheme: dark;
   }
 }
 
+:root[data-theme="dark"] {
+  --bg: #170a21;
+  --surface: #22122f;
+  --soft: #2f1a42;
+  --line: #3b244c;
+  --ink: #f3eef8;
+  --muted: #b9a8c9;
+  --purple: #a57bea;
+  --on-purple: #170a21;
+  --mustard-soft: #3a2c10;
+  --on-mustard-soft: #f0c14b;
+  --band: #22122f;
+  --band-line: #3b244c;
+  --drupe-a: #7c3ad6;
+  --drupe-b: #3b1d52;
+  --drupe-c: #5a27a3;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-soft: var(--soft);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-purple: var(--purple);
+  --color-on-purple: var(--on-purple);
+  --color-lime: var(--lime);
+  --color-on-lime: var(--on-lime);
+  --color-mustard: var(--mustard);
+  --color-mustard-soft: var(--mustard-soft);
+  --color-on-mustard-soft: var(--on-mustard-soft);
+  --color-band: var(--band);
+  --color-on-band: var(--on-band);
+  --color-band-line: var(--band-line);
+  --font-display: var(--font-bricolage);
+  --font-sans: var(--font-hanken);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-hanken), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
+}
+
+.font-display {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Íconos que dependen del tema activo */
+.light-hidden {
+  display: none;
+}
+:root[data-theme="dark"] .light-hidden {
+  display: block;
+}
+:root[data-theme="dark"] .dark-hidden {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .light-hidden {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .dark-hidden {
+    display: none;
+  }
+}
+
+.squircle {
+  border-radius: 22%;
+}
+
+/* Campos del panel */
+.input {
+  height: 2.75rem;
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 0 0.875rem;
+  color: var(--ink);
+}
+textarea.input {
+  height: auto;
+  min-height: 7rem;
+  padding: 0.625rem 0.875rem;
+  line-height: 1.5;
+}
+.input:focus {
+  outline: 2px solid var(--purple);
+  outline-offset: -1px;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Juntadita — Zarzamora</title>
+<!-- Fonts: Bricolage Grotesque & Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#170A21",
+            "surface": "#170A21",
+            "surface-card": "#22122F",
+            "surface-container": "#2B163E",
+            "border-custom": "#3B1D54",
+            "border-highlight": "#4A266B",
+            "on-surface": "#F3EEF8",
+            "on-surface-variant": "#B39FC7",
+            "accent-lima": "#B8E62E",
+            "accent-lima-hover": "#C4F33C",
+            "accent-purple": "#D5BAFF",
+            "accent-purple-dim": "#A87FF3"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Bricolage Grotesque", "sans-serif"],
+            "label-md": ["Hanken Grotesk", "sans-serif"],
+            "headline-lg-mobile": ["Bricolage Grotesque", "sans-serif"],
+            "body-lg": ["Hanken Grotesk", "sans-serif"],
+            "body-sm": ["Hanken Grotesk", "sans-serif"],
+            "headline-sm": ["Bricolage Grotesque", "sans-serif"],
+            "body-md": ["Hanken Grotesk", "sans-serif"],
+            "display-hero-mobile": ["Bricolage Grotesque", "sans-serif"],
+            "headline-md": ["Bricolage Grotesque", "sans-serif"],
+            "label-lg": ["Hanken Grotesk", "sans-serif"],
+            "display-hero": ["Bricolage Grotesque", "sans-serif"],
+            "label-sm": ["Hanken Grotesk", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-accent-lima selection:text-[#170A21] min-h-screen pb-32">
+<!-- Max Mobile Screen Container (390px) -->
+<div class="w-full max-w-[390px] mx-auto min-h-screen bg-background relative flex flex-col">
+<!-- 1. Top App Bar -->
+<header class="sticky top-0 z-40 bg-[#170A21]/90 backdrop-blur-md px-margin-mobile py-space-sm flex items-center justify-between border-b border-border-custom">
+<a class="flex items-center gap-space-xs text-accent-purple font-label-md text-label-md hover:text-accent-lima transition-colors" href="#apps">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span>Apps</span>
+</a>
+<!-- Brand Anchor -->
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-surface-container border border-border-highlight flex items-center justify-center text-accent-lima">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Zarzamora</span>
+</div>
+<button aria-label="Compartir" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container active:-translate-y-0.5 transition-all">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile flex flex-col gap-space-xl pt-space-md">
+<!-- 2. App Hero Card -->
+<section class="bg-surface-card rounded-DEFAULT border border-border-custom p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start justify-between">
+<!-- Squircle Icon (72px) -->
+<div class="w-[72px] h-[72px] rounded-[20px] bg-surface-container flex items-center justify-center text-accent-lima border border-border-highlight flex-shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-[38px]" style="font-variation-settings: 'FILL' 1;">skillet</span>
+</div>
+<!-- Version Badge -->
+<span class="px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-accent-purple border border-border-highlight">
+            v1.4 · Estable
+          </span>
+</div>
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">
+            Juntadita
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Dividí los gastos del asado sin pelearte con nadie.
+          </p>
+</div>
+<!-- Pill Chips Row -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container border border-border-highlight text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-accent-purple">language</span>
+            Web · PWA
+          </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container border border-border-highlight text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-accent-purple">payments</span>
+            Finanzas
+          </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent-lima text-[#170A21] font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">wifi_off</span>
+            Sin conexión
+          </span>
+</div>
+</section>
+<!-- 3. Metrics Quick Bar (Horizontal Scrollable 4 Stat Pills) -->
+<section class="flex gap-2 overflow-x-auto no-scrollbar py-0.5">
+<div class="flex-shrink-0 bg-surface-card border border-border-custom px-3.5 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-lima text-[18px]">verified</span>
+<div class="flex items-baseline gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Versión:</span>
+<span class="font-label-md text-label-md text-on-surface">1.4</span>
+</div>
+</div>
+<div class="flex-shrink-0 bg-surface-card border border-border-custom px-3.5 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-lima text-[18px]">calendar_today</span>
+<div class="flex items-baseline gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Actualizada:</span>
+<span class="font-label-md text-label-md text-on-surface">14 oct 2026</span>
+</div>
+</div>
+<div class="flex-shrink-0 bg-surface-card border border-border-custom px-3.5 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-lima text-[18px]">translate</span>
+<div class="flex items-baseline gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Idioma:</span>
+<span class="font-label-md text-label-md text-on-surface">Español</span>
+</div>
+</div>
+<div class="flex-shrink-0 bg-surface-card border border-border-custom px-3.5 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-lima text-[18px]">hard_drive</span>
+<div class="flex items-baseline gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tamaño:</span>
+<span class="font-label-md text-label-md text-on-surface">2 MB</span>
+</div>
+</div>
+</section>
+<!-- 4. Media Gallery (Mobile carousel with snap scroll) -->
+<section class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Galería</h2>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Deslizá para ver más capturas →</span>
+</div>
+<div class="flex gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2 pt-1 -mx-margin-mobile px-margin-mobile">
+<!-- Card 1: Video Preview Card -->
+<div class="snap-start flex-shrink-0 w-[260px] bg-surface-card text-on-surface rounded-DEFAULT border border-border-custom overflow-hidden flex flex-col justify-between p-space-md aspect-[9/14] relative">
+<div class="flex items-center justify-between z-10">
+<span class="bg-surface-container border border-border-highlight px-2.5 py-1 rounded-full text-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-lima animate-pulse"></span> 0:42
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Demo</span>
+</div>
+<div class="flex flex-col items-center justify-center my-auto z-10 gap-2">
+<button aria-label="Reproducir video de prueba" class="w-14 h-14 rounded-full bg-accent-lima text-[#170A21] flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shadow-lg shadow-black/40">
+<span class="material-symbols-outlined text-[32px] ml-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<span class="font-label-md text-label-md text-on-surface text-center font-medium">Mirá la demo rápida</span>
+</div>
+<div class="bg-surface-container/80 rounded-lg p-2.5 border border-border-highlight backdrop-blur-sm z-10">
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center">Cómo cargar un asado para 12 personas en 30 segundos.</p>
+</div>
+</div>
+<!-- Card 2: Screenshot 1 -->
+<div class="snap-start flex-shrink-0 w-[260px] bg-surface-card rounded-DEFAULT border border-border-custom p-space-md aspect-[9/14] flex flex-col justify-between">
+<div class="flex items-center justify-between border-b border-border-custom pb-2">
+<span class="font-label-md text-label-md text-accent-lima">Paso 1</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">group_add</span>
+</div>
+<div class="flex flex-col gap-2.5 my-auto">
+<div class="p-2.5 bg-surface-container rounded-lg border border-border-highlight">
+<div class="flex justify-between items-center text-label-md font-label-md text-on-surface">
+<span>Martín (Asador)</span>
+<span class="text-accent-lima font-bold">$42.500</span>
+</div>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Vacío, costillar y carbón</span>
+</div>
+<div class="p-2.5 bg-surface-container rounded-lg border border-border-highlight">
+<div class="flex justify-between items-center text-label-md font-label-md text-on-surface">
+<span>Sofi</span>
+<span class="text-accent-lima font-bold">$18.200</span>
+</div>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Bebidas y hielo</span>
+</div>
+<div class="p-2.5 bg-surface-container rounded-lg border border-border-highlight">
+<div class="flex justify-between items-center text-label-md font-label-md text-on-surface">
+<span>Lucas</span>
+<span class="text-accent-lima font-bold">$9.400</span>
+</div>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Panadería y postre</span>
+</div>
+</div>
+<p class="font-headline-sm text-[16px] text-on-surface border-t border-border-custom pt-2 leading-tight">
+              Carga de comensales y compras
+            </p>
+</div>
+<!-- Card 3: Screenshot 2 -->
+<div class="snap-start flex-shrink-0 w-[260px] bg-surface-card rounded-DEFAULT border border-border-custom p-space-md aspect-[9/14] flex flex-col justify-between">
+<div class="flex items-center justify-between border-b border-border-custom pb-2">
+<span class="font-label-md text-label-md text-accent-lima">Paso 2</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">balance</span>
+</div>
+<div class="flex flex-col gap-2 my-auto">
+<div class="text-center p-3 bg-surface-container border border-border-highlight rounded-lg">
+<span class="text-on-surface-variant font-label-sm text-label-sm block">Gasto total: $70.100</span>
+<span class="font-headline-sm text-headline-sm text-accent-lima">$5.841 / pers</span>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex items-center justify-between text-body-sm font-body-sm bg-surface-container/60 border border-border-custom p-2 rounded">
+<span class="text-on-surface">Facu paga a Martín</span>
+<span class="font-bold text-accent-lima">$5.840</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm bg-surface-container/60 border border-border-custom p-2 rounded">
+<span class="text-on-surface">Flor paga a Martín</span>
+<span class="font-bold text-accent-lima">$5.840</span>
+</div>
+</div>
+</div>
+<p class="font-headline-sm text-[16px] text-on-surface border-t border-border-custom pt-2 leading-tight">
+              Balance inteligente de deudas
+            </p>
+</div>
+<!-- Card 4: Screenshot 3 -->
+<div class="snap-start flex-shrink-0 w-[260px] bg-surface-card rounded-DEFAULT border border-border-custom p-space-md aspect-[9/14] flex flex-col justify-between">
+<div class="flex items-center justify-between border-b border-border-custom pb-2">
+<span class="font-label-md text-label-md text-accent-lima">Paso 3</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chat</span>
+</div>
+<div class="my-auto p-3 bg-surface-container rounded-lg border border-border-highlight font-mono text-[11px] leading-relaxed text-on-surface">
+              🥩 <b>Resumen Asadazo Sábado</b><br/>
+              Total: $70.100 (12 personas)<br/>
+              --------------------<br/>
+              👉 Juan le transfiere $5.841 a Martín<br/>
+              👉 Cami le transfiere $5.841 a Sofi<br/>
+              Alias Martín: <i class="text-accent-lima">tincho.asador.mp</i>
+</div>
+<p class="font-headline-sm text-[16px] text-on-surface border-t border-border-custom pt-2 leading-tight">
+              Resumen para WhatsApp listo para compartir
+            </p>
+</div>
+</div>
+</section>
+<!-- 5. "Sobre esta app" Section -->
+<section class="bg-surface-card rounded-DEFAULT border border-border-custom p-space-lg flex flex-col gap-space-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Sobre esta app</h2>
+<div class="flex flex-col gap-3 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<p>
+            Pensada especialmente para juntadas de amigos y asados de fin de semana. No requiere que nadie se cree una cuenta ni descargue archivos pesados: abrís el link, cargás los gastos y se resuelve al instante.
+          </p>
+<p>
+            Cansado de planillas complejas que piden loguearse con Google o apps que te cobran suscripción para dividir una pizza, armé una herramienta limpia que resuelve la matemática exacta en un toque.
+          </p>
+<p>
+            Optimizada para celular, podés agregarla a tu pantalla de inicio como PWA y usarla incluso en medio del campo sin señal.
+          </p>
+</div>
+<div class="border-t border-border-custom pt-space-md flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Qué podés hacer</h3>
+<ul class="flex flex-col gap-2.5">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-accent-lima text-[20px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Cargar gastos con varios aportantes a la vez</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-accent-lima text-[20px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Calcular quién le debe a quién con transferencias mínimas</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-accent-lima text-[20px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Exclusiones personalizadas (veggies, sin alcohol)</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-accent-lima text-[20px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Funciona 100% offline y exporta directo a WhatsApp</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- 6. "Novedades de la versión 1.4" Card -->
+<section class="bg-surface-card rounded-DEFAULT border border-border-custom p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Novedades versión 1.4</h2>
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-accent-lima text-[#170A21] font-bold">Nuevo</span>
+</div>
+<ul class="flex flex-col gap-2 pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="text-accent-lima font-bold">•</span>
+<span class="text-on-surface">Soporte para redondeo inteligente en transferencias.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-accent-lima font-bold">•</span>
+<span class="text-on-surface">Exportación de comprobante en formato texto copiable.</span>
+</li>
+</ul>
+</section>
+<!-- 7. "Cómo la hice" Card (Deep purple container #2B163E with border #4A266B and text #F3EEF8) -->
+<section class="bg-[#2B163E] rounded-DEFAULT border border-[#4A266B] p-space-lg flex flex-col gap-space-md text-[#F3EEF8]">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-lima text-[22px]">code_blocks</span>
+<h2 class="font-headline-sm text-headline-sm text-[#F3EEF8]">Cómo la hice</h2>
+</div>
+<span class="text-[#B39FC7] font-label-sm text-label-sm">Behind the code</span>
+</div>
+<!-- Tech Stack Chips -->
+<div class="flex flex-wrap gap-1.5">
+<span class="px-3 py-1 rounded-full bg-[#22122F] text-[#F3EEF8] font-label-sm text-label-sm border border-[#4A266B] font-medium">Claude Code</span>
+<span class="px-3 py-1 rounded-full bg-[#22122F] text-[#F3EEF8] font-label-sm text-label-sm border border-[#4A266B] font-medium">React</span>
+<span class="px-3 py-1 rounded-full bg-[#22122F] text-[#F3EEF8] font-label-sm text-label-sm border border-[#4A266B] font-medium">Dexie.js</span>
+<span class="px-3 py-1 rounded-full bg-[#22122F] text-[#F3EEF8] font-label-sm text-label-sm border border-[#4A266B] font-medium">Tailwind</span>
+</div>
+<!-- Dev Time -->
+<div class="flex items-center gap-1.5 text-[#F3EEF8] font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-accent-lima">timer</span>
+<span>Tiempo de desarrollo: <b class="text-accent-lima">3 semanas</b></span>
+</div>
+<!-- Quote -->
+<blockquote class="border-l-2 border-accent-lima pl-3 italic font-body-md text-body-md text-[#F3EEF8]">
+          «La hice porque siempre era yo el que sacaba las cuentas en una servilleta mientras se enfriaba la provoleta.»
+          <footer class="not-italic font-label-sm text-label-sm font-bold text-accent-lima mt-1">— Joako</footer>
+</blockquote>
+</section>
+<!-- 8. "Seguridad y Privacidad" -->
+<section class="bg-surface-card rounded-DEFAULT border border-border-custom p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-2 text-accent-lima">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Seguridad y Privacidad</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Tus juntadas son tuyas. No usamos cookies invasivas ni guardamos tus números en la nube. Todo vive en el almacenamiento local de tu navegador.
+        </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container border border-border-highlight font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-accent-purple">save</span>
+            100% Local
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container border border-border-highlight font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-accent-purple">no_accounts</span>
+            Sin registro
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container border border-border-highlight font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-accent-purple">terminal</span>
+            Código auditable
+          </span>
+</div>
+</section>
+<!-- 9. "Más apps de Joako" (Horizontal scroll cards) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Más apps de Joako</h2>
+<a class="text-accent-purple font-label-md text-label-md hover:text-accent-lima transition-colors" href="#apps">Ver catálogo</a>
+</div>
+<div class="flex gap-3 overflow-x-auto no-scrollbar -mx-margin-mobile px-margin-mobile pb-1">
+<!-- App 1: Por Dónde Empiezo -->
+<div class="flex-shrink-0 w-[190px] bg-surface-card rounded-DEFAULT border border-border-custom p-space-md flex flex-col justify-between gap-3">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container border border-border-highlight flex items-center justify-center text-accent-lima mb-2">
+<span class="material-symbols-outlined text-[22px]">explore</span>
+</div>
+<h3 class="font-headline-sm text-[16px] text-on-surface leading-snug">Por Dónde Empiezo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5">Rutas guiadas para aprender desarrollo.</p>
+</div>
+<a class="text-accent-lima font-label-sm text-label-sm font-bold flex items-center gap-1 hover:underline" href="#">
+              Ver app <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- App 2: Cali Go! -->
+<div class="flex-shrink-0 w-[190px] bg-surface-card rounded-DEFAULT border border-border-custom p-space-md flex flex-col justify-between gap-3">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container border border-border-highlight flex items-center justify-center text-accent-lima mb-2">
+<span class="material-symbols-outlined text-[22px]">fitness_center</span>
+</div>
+<h3 class="font-headline-sm text-[16px] text-on-surface leading-snug">Cali Go!</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5">Rutinas de calistenia sin equipamiento.</p>
+</div>
+<a class="text-accent-lima font-label-sm text-label-sm font-bold flex items-center gap-1 hover:underline" href="#">
+              Ver app <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- App 3: Presupuest3D -->
+<div class="flex-shrink-0 w-[190px] bg-surface-card rounded-DEFAULT border border-border-custom p-space-md flex flex-col justify-between gap-3">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container border border-border-highlight flex items-center justify-center text-accent-lima mb-2">
+<span class="material-symbols-outlined text-[22px]">view_in_ar</span>
+</div>
+<h3 class="font-headline-sm text-[16px] text-on-surface leading-snug">Presupuest3D</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5">Cotizador rápido para impresión 3D.</p>
+</div>
+<a class="text-accent-lima font-label-sm text-label-sm font-bold flex items-center gap-1 hover:underline" href="#">
+              Ver app <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- App 4: Trazo Fit -->
+<div class="flex-shrink-0 w-[190px] bg-surface-card rounded-DEFAULT border border-border-custom p-space-md flex flex-col justify-between gap-3">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container border border-border-highlight flex items-center justify-center text-accent-lima mb-2">
+<span class="material-symbols-outlined text-[22px]">edit_note</span>
+</div>
+<h3 class="font-headline-sm text-[16px] text-on-surface leading-snug">Trazo Fit</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-0.5">Seguimiento minimalista de hábitos diarios.</p>
+</div>
+<a class="text-accent-lima font-label-sm text-label-sm font-bold flex items-center gap-1 hover:underline" href="#">
+              Ver app <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="flex flex-col items-center text-center px-margin-mobile py-space-xl gap-space-md w-full max-w-[390px] mx-auto border-t border-border-custom bg-surface-card mb-8 rounded-t-DEFAULT">
+<div class="flex flex-wrap justify-center gap-4 text-on-surface-variant text-label-sm font-label-sm">
+<a class="hover:text-accent-lima transition-colors underline" href="#">Manifesto</a>
+<a class="hover:text-accent-lima transition-colors underline" href="#">Código fuente</a>
+<a class="hover:text-accent-lima transition-colors underline" href="#">Privacidad</a>
+<a class="hover:text-accent-lima transition-colors underline" href="#">Contacto</a>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          © 2024 Zarzamora por Joako Zarza. Hecho con software libre y mate.
+        </p>
+</footer>
+</main>
+<!-- 10. Sticky Bottom Bar Fixed at Bottom of Screen (z-50) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-[#170A21]/90 backdrop-blur-md border-t border-[#3B1D54]">
+<div class="max-w-[390px] mx-auto px-margin-mobile py-space-sm flex items-center gap-3">
+<!-- Bookmark / Save Icon Button -->
+<button aria-label="Guardar en favoritos" class="w-12 h-12 flex-shrink-0 rounded-full border border-border-custom bg-surface-card flex items-center justify-center text-on-surface hover:text-accent-lima hover:border-border-highlight active:-translate-y-0.5 transition-all" id="save-btn">
+<span class="material-symbols-outlined text-[24px]">bookmark</span>
+</button>
+<!-- Primary CTA Lima Button Full-width -->
+<a class="flex-1 h-12 rounded-full bg-[#B8E62E] hover:bg-[#C4F33C] text-[#170A21] font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:-translate-y-0.5 transition-all shadow-lg shadow-black/30" href="https://juntadita.app" rel="noopener noreferrer" target="_blank">
+<span>Abrir app gratis</span>
+<span class="material-symbols-outlined text-[20px]">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Inline vanilla JavaScript for micro-interactions -->
+<script>
+    // Micro-interaction for bookmark button toggle
+    const saveBtn = document.getElementById('save-btn');
+    if (saveBtn) {
+      let saved = false;
+      saveBtn.addEventListener('click', () => {
+        saved = !saved;
+        const icon = saveBtn.querySelector('.material-symbols-outlined');
+        if (saved) {
+          icon.style.fontVariationSettings = "'FILL' 1";
+          saveBtn.classList.add('bg-surface-container', 'border-accent-lima', 'text-accent-lima');
+          saveBtn.classList.remove('text-on-surface');
+        } else {
+          icon.style.fontVariationSettings = "'FILL' 0";
+          saveBtn.classList.remove('bg-surface-container', 'border-accent-lima', 'text-accent-lima');
+          saveBtn.classList.add('text-on-surface');
+        }
+      });
+    }
+  </script>
+</body></html>

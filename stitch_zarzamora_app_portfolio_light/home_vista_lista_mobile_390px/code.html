@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Catálogo de Apps - Zarzamora</title>
+<!-- Google Fonts: Bricolage Grotesque & Hanken Grotesk (Sans-Serif Only) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined (Exact literal tags) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#fcebff",
+            "background": "#fff7fc",
+            "on-tertiary-fixed": "#261a00",
+            "surface-variant": "#f5d9ff",
+            "secondary-container": "#c4f33c",
+            "surface-container-high": "#f8e0ff",
+            "on-surface-variant": "#4b4453",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#d6baff",
+            "tertiary-fixed-dim": "#f6be39",
+            "surface-dim": "#f0ceff",
+            "tertiary-container": "#6c4f00",
+            "surface-container-low": "#feefff",
+            "surface": "#fff7fc",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#a9d619",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#546d00",
+            "inverse-surface": "#3f264d",
+            "on-primary-container": "#d7bcff",
+            "on-primary-fixed-variant": "#5e16b5",
+            "on-primary": "#ffffff",
+            "primary-container": "#6b2bc2",
+            "on-error-container": "#93000a",
+            "surface-container": "#fbe8ff",
+            "secondary-fixed": "#c4f33c",
+            "on-background": "#291137",
+            "tertiary-fixed": "#ffdfa0",
+            "surface-tint": "#7639ce",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#cdc3d6",
+            "surface-container-highest": "#f5d9ff",
+            "primary-fixed": "#ecdcff",
+            "secondary": "#4f6600",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#280057",
+            "inverse-primary": "#d6baff",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#f8c03b",
+            "on-secondary-fixed-variant": "#3b4d00",
+            "surface-bright": "#fff7fc",
+            "tertiary": "#4f3900",
+            "outline": "#7c7485",
+            "primary": "#5200a7",
+            "on-secondary-fixed": "#161f00",
+            "on-surface": "#291137"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Bricolage Grotesque", "sans-serif"],
+            "label-md": ["Hanken Grotesk", "sans-serif"],
+            "headline-lg-mobile": ["Bricolage Grotesque", "sans-serif"],
+            "body-lg": ["Hanken Grotesk", "sans-serif"],
+            "body-sm": ["Hanken Grotesk", "sans-serif"],
+            "headline-sm": ["Bricolage Grotesque", "sans-serif"],
+            "body-md": ["Hanken Grotesk", "sans-serif"],
+            "display-hero-mobile": ["Bricolage Grotesque", "sans-serif"],
+            "headline-md": ["Bricolage Grotesque", "sans-serif"],
+            "label-lg": ["Hanken Grotesk", "sans-serif"],
+            "display-hero": ["Bricolage Grotesque", "sans-serif"],
+            "label-sm": ["Hanken Grotesk", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-background">
+<!-- Main Mobile Canvas Container (Constrained strictly to 390px mobile viewport) -->
+<div class="w-full max-w-[390px] mx-auto min-h-screen bg-background flex flex-col relative shadow-none border-x border-outline-variant/40">
+<!-- TopAppBar (from Shared Components JSON: Docked, sticky, 390px layout) -->
+<header class="bg-surface docked full-width top-0 sticky z-40 border-b border-outline-variant flex justify-between items-center w-full px-margin-mobile py-space-sm max-w-[390px] mx-auto">
+<div class="flex items-center gap-2">
+<button aria-label="Menú" class="p-1 rounded-full text-on-surface hover:bg-surface-container active:-translate-y-0.5 transition-transform duration-150 flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<a class="flex items-center gap-1.5 active:-translate-y-0.5 transition-transform" href="#">
+<img alt="Logo Zarzamora" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X77ksTwzdf4GpPCVFjYC5h_WMcUS3A2QrpwmSLWs9pQ1Iz6zWVhPrND_h5NZCACKGzsHUWRnVzZFh4y-5MZSoLPlMyYO2W8v3KG_3kSt92cG_ykzzPhKYEdcoJ-twZMolLJLAd03abhNeL7cHhPuQH8HfS2li2_9aXv1zLEYBmh6YNGJ4JhjJWcF5R-AdH2AlHa0BtCmEmVbI5wSbwUHAY0I8dVF89ta5wED2ImydVUsASJOSytieiSKXQ"/>
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight">Zarzamora</span>
+</a>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Buscar apps" class="p-1 rounded-full text-primary hover:bg-surface-container active:-translate-y-0.5 transition-transform duration-150 flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-margin-mobile pt-space-md pb-space-xl flex flex-col gap-space-md">
+<!-- Search Trigger Input (Fast tactile interaction) -->
+<section>
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined text-outline absolute left-3 pointer-events-none text-[20px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-full text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-0 transition-colors" placeholder="Buscá por nombre, tech o función..." type="search"/>
+<span class="material-symbols-outlined text-outline text-[18px] absolute right-3 pointer-events-none">tune</span>
+</div>
+</section>
+<!-- Compact Title & View Switch Bar -->
+<section class="flex items-center justify-between pt-1">
+<div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Catálogo de Apps</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">12 herramientas listas para usar</p>
+</div>
+<!-- Segmented View Switch (List is Active) -->
+<div class="flex items-center bg-surface-container-high p-0.5 rounded-full border border-outline-variant/60">
+<button aria-label="Vista cuadrícula" class="p-1.5 rounded-full text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button aria-label="Vista lista activada" class="p-1.5 rounded-full bg-surface-container-lowest text-primary shadow-sm flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+</button>
+</div>
+</section>
+<!-- Horizontal Scrollable Filter Tabs -->
+<section class="overflow-x-auto no-scrollbar -mx-margin-mobile px-margin-mobile flex items-center gap-2 py-1">
+<!-- Active Filter: Todas -->
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 transition-transform active:scale-95 shadow-none" type="button">
+<span>Todas</span>
+<span class="bg-primary-container text-on-primary-container text-[11px] px-1.5 py-0.2 rounded-full font-bold">12</span>
+</button>
+<!-- Inactive Filter: Web Apps -->
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-transform active:scale-95" type="button">
+<span>Web Apps</span>
+<span class="bg-surface-variant text-primary text-[11px] px-1.5 py-0.2 rounded-full font-bold">8</span>
+</button>
+<!-- Inactive Filter: Android APKs -->
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-transform active:scale-95" type="button">
+<span>Android APKs</span>
+<span class="bg-surface-variant text-primary text-[11px] px-1.5 py-0.2 rounded-full font-bold">4</span>
+</button>
+<!-- Inactive Filter: Beta -->
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container font-label-md text-label-md transition-transform active:scale-95" type="button">
+<span>Beta</span>
+</button>
+</section>
+<!-- Mobile List Rows: Stack of clean horizontal app cards -->
+<section class="flex flex-col gap-2.5">
+<!-- Row 1: Juntadita -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-[14px] p-3 flex items-center justify-between gap-3 transition-transform active:-translate-y-0.5">
+<div class="flex items-center gap-3 min-w-0">
+<!-- Squircle Icon (48px) -->
+<div class="w-12 h-12 rounded-[14px] bg-surface-container-high border border-outline-variant/80 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">outdoor_grill</span>
+</div>
+<!-- Metadata -->
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Juntadita</h2>
+<span class="bg-surface-container-high text-primary font-label-sm text-[10px] px-1.5 py-0.5 rounded-full shrink-0 font-bold">v1.4</span>
+</div>
+<p class="font-body-sm text-[12px] leading-snug text-on-surface-variant line-clamp-1 mt-0.5">Calculadora de asados y gastos compartidos</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-[11px] text-outline font-semibold">Web</span>
+<span class="text-outline text-[8px]">•</span>
+<span class="font-label-sm text-[11px] text-secondary font-bold">Estable</span>
+</div>
+</div>
+</div>
+<!-- Action Button: Pill Lima -->
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-secondary-container hover:bg-secondary-fixed text-on-background font-label-md text-label-md font-bold tracking-tight active:-translate-y-0.5 transition-transform" href="#">
+            Abrir
+          </a>
+</article>
+<!-- Row 2: Por Dónde Empiezo -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-[14px] p-3 flex items-center justify-between gap-3 transition-transform active:-translate-y-0.5">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-[14px] bg-surface-container-high border border-outline-variant/80 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">map</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Por Dónde Empiezo</h2>
+<span class="bg-surface-container-high text-primary font-label-sm text-[10px] px-1.5 py-0.5 rounded-full shrink-0 font-bold">v2.1</span>
+</div>
+<p class="font-body-sm text-[12px] leading-snug text-on-surface-variant line-clamp-1 mt-0.5">Rutas paso a paso para aprender dev</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-[11px] text-outline font-semibold">Web</span>
+<span class="text-outline text-[8px]">•</span>
+<span class="font-label-sm text-[11px] text-secondary font-bold">Estable</span>
+</div>
+</div>
+</div>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-secondary-container hover:bg-secondary-fixed text-on-background font-label-md text-label-md font-bold tracking-tight active:-translate-y-0.5 transition-transform" href="#">
+            Abrir
+          </a>
+</article>
+<!-- Row 3: Cali Go! -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-[14px] p-3 flex items-center justify-between gap-3 transition-transform active:-translate-y-0.5">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-[14px] bg-surface-container-high border border-outline-variant/80 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">sports_gymnastics</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Cali Go!</h2>
+<span class="bg-tertiary-fixed text-tertiary font-label-sm text-[10px] px-1.5 py-0.5 rounded-full shrink-0 font-bold">v0.9</span>
+</div>
+<p class="font-body-sm text-[12px] leading-snug text-on-surface-variant line-clamp-1 mt-0.5">Rutinas de calistenia y mapa de plazas</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-[11px] text-outline font-semibold">Android</span>
+<span class="text-outline text-[8px]">•</span>
+<span class="font-label-sm text-[11px] text-tertiary font-bold">Beta</span>
+</div>
+</div>
+</div>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-transparent border border-primary text-primary hover:bg-surface-container font-label-md text-label-md font-bold tracking-tight active:-translate-y-0.5 transition-transform" href="#">
+            APK
+          </a>
+</article>
+<!-- Row 4: Train -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-[14px] p-3 flex items-center justify-between gap-3 transition-transform active:-translate-y-0.5">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-[14px] bg-surface-container-high border border-outline-variant/80 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">fitness_center</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Train</h2>
+<span class="bg-tertiary-fixed text-tertiary font-label-sm text-[10px] px-1.5 py-0.5 rounded-full shrink-0 font-bold">v1.2</span>
+</div>
+<p class="font-body-sm text-[12px] leading-snug text-on-surface-variant line-clamp-1 mt-0.5">CrossFit y planificación inteligente</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-[11px] text-outline font-semibold">Android</span>
+<span class="text-outline text-[8px]">•</span>
+<span class="font-label-sm text-[11px] text-tertiary font-bold">Beta</span>
+</div>
+</div>
+</div>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-transparent border border-primary text-primary hover:bg-surface-container font-label-md text-label-md font-bold tracking-tight active:-translate-y-0.5 transition-transform" href="#">
+            APK
+          </a>
+</article>
+<!-- Row 5: Presupuest3D -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-[14px] p-3 flex items-center justify-between gap-3 transition-transform active:-translate-y-0.5">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-[14px] bg-surface-container-high border border-outline-variant/80 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">view_in_ar</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Presupuest3D</h2>
+<span class="bg-surface-container-high text-primary font-label-sm text-[10px] px-1.5 py-0.5 rounded-full shrink-0 font-bold">v1.1</span>
+</div>
+<p class="font-body-sm text-[12px] leading-snug text-on-surface-variant line-clamp-1 mt-0.5">Costos de filamento y luz para impresión 3D</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-[11px] text-outline font-semibold">Web</span>
+<span class="text-outline text-[8px]">•</span>
+<span class="font-label-sm text-[11px] text-secondary font-bold">Estable</span>
+</div>
+</div>
+</div>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-secondary-container hover:bg-secondary-fixed text-on-background font-label-md text-label-md font-bold tracking-tight active:-translate-y-0.5 transition-transform" href="#">
+            Abrir
+          </a>
+</article>
+<!-- Row 6: Escudo PyME -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-[14px] p-3 flex items-center justify-between gap-3 transition-transform active:-translate-y-0.5">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-[14px] bg-surface-container-high border border-outline-variant/80 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">security</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Escudo PyME</h2>
+</div>
+<p class="font-body-sm text-[12px] leading-snug text-on-surface-variant line-clamp-1 mt-0.5">Auditoría de seguridad y respaldos</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-[11px] text-outline font-semibold">Web</span>
+<span class="text-outline text-[8px]">•</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant font-medium">En desarrollo</span>
+</div>
+</div>
+</div>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-secondary-container hover:bg-secondary-fixed text-on-background font-label-md text-label-md font-bold tracking-tight active:-translate-y-0.5 transition-transform" href="#">
+            Abrir
+          </a>
+</article>
+<!-- Row 7: Roll-O-Meter -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-[14px] p-3 flex items-center justify-between gap-3 transition-transform active:-translate-y-0.5">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-[14px] bg-surface-container-high border border-outline-variant/80 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">straighten</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Roll-O-Meter</h2>
+</div>
+<p class="font-body-sm text-[12px] leading-snug text-on-surface-variant line-clamp-1 mt-0.5">Medí cuánto filamento queda en el rollo</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-[11px] text-outline font-semibold">Android</span>
+<span class="text-outline text-[8px]">•</span>
+<span class="font-label-sm text-[11px] text-tertiary font-bold">Beta</span>
+</div>
+</div>
+</div>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-transparent border border-primary text-primary hover:bg-surface-container font-label-md text-label-md font-bold tracking-tight active:-translate-y-0.5 transition-transform" href="#">
+            APK
+          </a>
+</article>
+<!-- Row 8: Orbit -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-[14px] p-3 flex items-center justify-between gap-3 transition-transform active:-translate-y-0.5">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-[14px] bg-surface-container-high border border-outline-variant/80 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">radio_button_checked</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Orbit</h2>
+</div>
+<p class="font-body-sm text-[12px] leading-snug text-on-surface-variant line-clamp-1 mt-0.5">Gestor de hábitos en órbitas concéntricas</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-[11px] text-outline font-semibold">Android</span>
+<span class="text-outline text-[8px]">•</span>
+<span class="font-label-sm text-[11px] text-tertiary font-bold">Beta</span>
+</div>
+</div>
+</div>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-transparent border border-primary text-primary hover:bg-surface-container font-label-md text-label-md font-bold tracking-tight active:-translate-y-0.5 transition-transform" href="#">
+            APK
+          </a>
+</article>
+<!-- Row 9: Trazo Fit -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-[14px] p-3 flex items-center justify-between gap-3 transition-transform active:-translate-y-0.5">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-[14px] bg-surface-container-high border border-outline-variant/80 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">edit_note</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="font-headline-sm text-[16px] leading-tight text-on-surface truncate">Trazo Fit</h2>
+</div>
+<p class="font-body-sm text-[12px] leading-snug text-on-surface-variant line-clamp-1 mt-0.5">Seguimiento minimalista de series</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-[11px] text-outline font-semibold">Web</span>
+<span class="text-outline text-[8px]">•</span>
+<span class="font-label-sm text-[11px] text-secondary font-bold">Estable</span>
+</div>
+</div>
+</div>
+<a class="shrink-0 px-3.5 py-1.5 rounded-full bg-secondary-container hover:bg-secondary-fixed text-on-background font-label-md text-label-md font-bold tracking-tight active:-translate-y-0.5 transition-transform" href="#">
+            Abrir
+          </a>
+</article>
+</section>
+<!-- Quick Trust/Stat Banner -->
+<section class="bg-surface-container-low border border-outline-variant rounded-[16px] p-3.5 flex items-start gap-3 mt-1">
+<div class="p-1 rounded-full bg-secondary-container text-on-background shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Compromiso independiente</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-snug mt-0.5">
+            Todas las apps son libres de anuncios y no recolectan datos privados. Código auditable y liviano.
+          </p>
+</div>
+</section>
+<!-- Maker Teaser Card (Sobre mí) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-[16px] p-4 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-sm text-headline-sm">
+            JZ
+          </div>
+<div>
+<h3 class="font-headline-sm text-[16px] text-on-surface leading-tight">Hecho por Joako Zarza</h3>
+<p class="font-body-sm text-[13px] text-on-surface-variant">Desarrollador independiente desde Córdoba, Argentina</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Construyo herramientas utilitarias que resuelven problemas diarios con foco en rendimiento, simpleza y respeto por quien las usa.
+        </p>
+<div class="pt-1 flex gap-2">
+<a class="flex-1 text-center py-2 px-3 rounded-full border border-outline-variant font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors" href="#">
+            Ver manifiesto
+          </a>
+<a class="flex-1 text-center py-2 px-3 rounded-full bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-colors" href="#">
+            Invitar un café
+          </a>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Components JSON execution) -->
+<footer class="w-full mb-20 border-t border-outline-variant bg-surface-container-low flex flex-col items-center text-center px-margin-mobile py-space-xl gap-space-md max-w-[390px] mx-auto">
+<div class="flex flex-wrap justify-center gap-x-4 gap-y-1 font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary underline active:opacity-80 transition-opacity" href="#">Manifesto</a>
+<a class="hover:text-primary underline active:opacity-80 transition-opacity" href="#">Código fuente</a>
+<a class="hover:text-primary underline active:opacity-80 transition-opacity" href="#">Privacidad</a>
+<a class="hover:text-primary underline active:opacity-80 transition-opacity" href="#">Contacto</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[320px]">
+        © 2024 Zarzamora por Joako Zarza. Hecho con software libre y mate.
+      </p>
+</footer>
+<!-- BottomNavBar (Shared Components JSON: destination_count: 4, Active state on "Apps") -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs max-w-[390px] mx-auto bg-surface-container-lowest border-t border-outline-variant">
+<!-- Destination 1: Apps (ACTIVE MATCH FOR THIS SCREEN) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-space-md py-space-xs font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">apps</span>
+<span class="mt-0.5">Apps</span>
+</a>
+<!-- Destination 2: Lanzamientos -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs font-label-sm text-label-sm hover:text-primary active:-translate-y-0.5 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+<span class="mt-0.5">Lanzamientos</span>
+</a>
+<!-- Destination 3: Favoritos -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs font-label-sm text-label-sm hover:text-primary active:-translate-y-0.5 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span class="mt-0.5">Favoritos</span>
+</a>
+<!-- Destination 4: Autor -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs font-label-sm text-label-sm hover:text-primary active:-translate-y-0.5 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span class="mt-0.5">Autor</span>
+</a>
+</nav>
+</div>
+</body></html>

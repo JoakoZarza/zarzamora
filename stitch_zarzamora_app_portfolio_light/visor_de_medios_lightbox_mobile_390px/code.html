@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Zarzamora · Visor de Medios</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#fcebff",
+            "background": "#fff7fc",
+            "on-tertiary-fixed": "#261a00",
+            "surface-variant": "#f5d9ff",
+            "secondary-container": "#c4f33c",
+            "surface-container-high": "#f8e0ff",
+            "on-surface-variant": "#4b4453",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#d6baff",
+            "tertiary-fixed-dim": "#f6be39",
+            "surface-dim": "#f0ceff",
+            "tertiary-container": "#6c4f00",
+            "surface-container-low": "#feefff",
+            "surface": "#fff7fc",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#a9d619",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#546d00",
+            "inverse-surface": "#3f264d",
+            "on-primary-container": "#d7bcff",
+            "on-primary-fixed-variant": "#5e16b5",
+            "on-primary": "#ffffff",
+            "primary-container": "#6b2bc2",
+            "on-error-container": "#93000a",
+            "surface-container": "#fbe8ff",
+            "secondary-fixed": "#c4f33c",
+            "on-background": "#291137",
+            "tertiary-fixed": "#ffdfa0",
+            "surface-tint": "#7639ce",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#cdc3d6",
+            "surface-container-highest": "#f5d9ff",
+            "primary-fixed": "#ecdcff",
+            "secondary": "#4f6600",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#280057",
+            "inverse-primary": "#d6baff",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#f8c03b",
+            "on-secondary-fixed-variant": "#3b4d00",
+            "surface-bright": "#fff7fc",
+            "tertiary": "#4f3900",
+            "outline": "#7c7485",
+            "primary": "#5200a7",
+            "on-secondary-fixed": "#161f00",
+            "on-surface": "#291137",
+            // Custom theater mode tokens mapping to guidelines
+            "mora-dark": "#1f0c29",
+            "mora-card": "#2a1238",
+            "mora-border": "#432357",
+            "lima-accent": "#b8e62e",
+            "purpura-tag": "#a57bea"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Bricolage Grotesque"],
+            "label-md": ["Hanken Grotesk"],
+            "headline-lg-mobile": ["Bricolage Grotesque"],
+            "body-lg": ["Hanken Grotesk"],
+            "body-sm": ["Hanken Grotesk"],
+            "headline-sm": ["Bricolage Grotesque"],
+            "body-md": ["Hanken Grotesk"],
+            "display-hero-mobile": ["Bricolage Grotesque"],
+            "headline-md": ["Bricolage Grotesque"],
+            "label-lg": ["Hanken Grotesk"],
+            "display-hero": ["Bricolage Grotesque"],
+            "label-sm": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#14081c] text-on-primary min-h-screen flex justify-center items-center font-body-md antialiased p-0 select-none">
+<!-- Mobile Viewport Canvas Container: strictly 390px phone frame -->
+<main class="w-full max-w-[390px] h-[844px] max-h-screen bg-mora-dark relative flex flex-col justify-between overflow-hidden shadow-2xl border border-mora-border rounded-[2.5rem]">
+<!-- 1. Top Bar (Close, Title & Context, Actions) -->
+<header class="w-full px-space-md pt-6 pb-space-sm flex items-center justify-between z-30 shrink-0 bg-gradient-to-b from-mora-dark via-mora-dark/90 to-transparent">
+<!-- Close modal button (44px target) -->
+<button aria-label="Cerrar visor" class="w-11 h-11 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 active:scale-95 text-white transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<!-- Center Title and Subtitle -->
+<div class="flex-1 flex flex-col items-center px-space-xs text-center">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-lima-accent"></span>
+<span class="text-white font-headline-sm text-sm tracking-tight font-bold">Juntadita</span>
+<span class="text-purpura-tag text-[11px] font-label-md px-1.5 py-0.5 rounded-full bg-primary-container/40 border border-purpura-tag/30">v1.4</span>
+</div>
+<p class="text-surface-variant/80 font-body-sm text-[12px] truncate max-w-[210px] mt-0.5">
+          Captura 2 de 5: Balance de gastos
+        </p>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-1">
+<button aria-label="Compartir" class="w-11 h-11 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 active:scale-95 text-white transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</header>
+<!-- 2. Main Media Viewport with Navigation Chevrons -->
+<section class="relative flex-1 flex flex-col items-center justify-center px-4 w-full overflow-hidden">
+<!-- Sleek Floating Chevron Left -->
+<button aria-label="Captura previa" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 border border-white/10 flex items-center justify-center text-white/90 active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_left</span>
+</button>
+<!-- Sleek Floating Chevron Right -->
+<button aria-label="Captura siguiente" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 border border-white/10 flex items-center justify-center text-white/90 active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<!-- Phone Mockup Container displaying "Juntadita" UI -->
+<div class="w-[280px] h-[450px] bg-mora-card border-2 border-white/15 rounded-[2rem] p-3 shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex flex-col justify-between relative transform transition-transform hover:scale-[1.01]">
+<!-- Mockup Speaker Notch -->
+<div class="w-20 h-1.5 bg-black/40 rounded-full mx-auto mb-2 shrink-0"></div>
+<!-- In-app UI Representation: Juntadita Balance Screen -->
+<div class="bg-[#1c0827] rounded-[1.4rem] p-3.5 flex-1 flex flex-col justify-between border border-mora-border overflow-hidden">
+<!-- Mockup App Header -->
+<div class="space-y-2">
+<div class="flex justify-between items-center pb-2 border-b border-white/10">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-md bg-secondary-fixed flex items-center justify-center text-mora-dark font-bold text-xs">🥩</span>
+<div>
+<h4 class="font-headline-sm text-xs text-white leading-none">Resumen del Asado</h4>
+<span class="text-[10px] text-surface-variant/70 font-label-sm">Sábado en lo de Nico</span>
+</div>
+</div>
+<span class="px-2 py-0.5 text-[10px] bg-secondary-container text-on-secondary-container font-label-sm rounded-full font-bold">Liquidado</span>
+</div>
+<!-- Big Number Total -->
+<div class="bg-mora-dark/80 rounded-xl p-2.5 border border-purpura-tag/20 text-center">
+<span class="text-[10px] text-surface-variant font-label-sm block">Gasto total del grupo</span>
+<span class="font-headline-lg-mobile text-2xl text-secondary-container tracking-tight">$37.700</span>
+</div>
+</div>
+<!-- Debts Breakdown -->
+<div class="space-y-1.5 my-auto">
+<span class="text-[10px] font-label-sm uppercase tracking-wider text-surface-variant/70 font-semibold block px-1">Cuentas claras:</span>
+<!-- Transfer 1 -->
+<div class="bg-white/5 rounded-lg p-2 flex items-center justify-between border border-white/5 text-xs">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-purpura-tag/30 text-purpura-tag text-[10px] flex items-center justify-center font-bold">N</span>
+<span class="text-white text-[11px] font-body-sm"><strong class="font-medium text-white">Nico</strong> le debe a Joako</span>
+</div>
+<span class="text-secondary-fixed font-headline-sm text-[12px] font-bold">$4.200</span>
+</div>
+<!-- Transfer 2 -->
+<div class="bg-white/5 rounded-lg p-2 flex items-center justify-between border border-white/5 text-xs">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-lima-accent/20 text-lima-accent text-[10px] flex items-center justify-center font-bold">M</span>
+<span class="text-white text-[11px] font-body-sm"><strong class="font-medium text-white">Mateo</strong> le debe a Cande</span>
+</div>
+<span class="text-secondary-fixed font-headline-sm text-[12px] font-bold">$2.900</span>
+</div>
+</div>
+<!-- In-app CTA -->
+<div class="w-full pt-1">
+<div class="w-full py-1.5 rounded-lg bg-primary-container text-white text-center text-[11px] font-label-md font-semibold flex items-center justify-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">send_money</span>
+              Enviar recordatorio por WhatsApp
+            </div>
+</div>
+</div>
+<!-- Phone Mockup Home Indicator -->
+<div class="w-24 h-1 bg-white/20 rounded-full mx-auto mt-2 shrink-0"></div>
+</div>
+<!-- Interactive Scrub Bar Player Below Screen -->
+<div class="w-full max-w-[280px] mt-3 bg-mora-dark/90 border border-white/10 rounded-full px-3 py-1.5 flex items-center gap-2.5 backdrop-blur-sm">
+<button aria-label="Pausar video" class="w-6 h-6 rounded-full bg-lima-accent text-mora-dark flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<!-- Progress Bar Track -->
+<div class="flex-1 flex flex-col justify-center">
+<div class="w-full h-1 bg-white/20 rounded-full overflow-hidden relative cursor-pointer">
+<div class="w-[43%] h-full bg-lima-accent rounded-full"></div>
+</div>
+</div>
+<span class="text-[10px] text-surface-variant font-label-sm font-semibold tracking-wide">0:18 / 0:42</span>
+<button aria-label="Silenciar" class="text-surface-variant hover:text-white transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">volume_up</span>
+</button>
+</div>
+</section>
+<!-- 3. Bottom Thumbnail Dock (Horizontal Carousel) -->
+<section class="w-full px-space-md pt-2 pb-1 shrink-0">
+<div class="w-full flex items-center gap-2.5 overflow-x-auto custom-scroll py-1.5 px-0.5">
+<!-- Thumbnail 1: Demo Video Badge -->
+<div class="flex-shrink-0 w-14 h-16 rounded-xl bg-mora-card border border-white/10 flex flex-col items-center justify-center relative cursor-pointer hover:border-white/30 transition-all opacity-70 hover:opacity-100">
+<span class="material-symbols-outlined text-[18px] text-purpura-tag mb-0.5">play_circle</span>
+<span class="text-[9px] font-label-sm text-surface-variant text-center leading-none">Demo</span>
+</div>
+<!-- Thumbnail 2: ACTIVE (Gastos Screen) with 2px Lima Border & Indicator -->
+<div class="flex-shrink-0 w-14 h-16 rounded-xl bg-mora-card border-2 border-lima-accent flex flex-col items-center justify-center relative cursor-pointer shadow-[0_0_12px_rgba(184,230,46,0.3)]">
+<!-- Active Dot -->
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-lima-accent rounded-full border-2 border-mora-dark"></span>
+<span class="material-symbols-outlined text-[18px] text-lima-accent mb-0.5">query_stats</span>
+<span class="text-[9px] font-label-sm text-lima-accent font-bold text-center leading-none">Balance</span>
+</div>
+<!-- Thumbnail 3: Gastos -->
+<div class="flex-shrink-0 w-14 h-16 rounded-xl bg-mora-card border border-white/10 flex flex-col items-center justify-center relative cursor-pointer hover:border-white/30 transition-all opacity-70 hover:opacity-100">
+<span class="material-symbols-outlined text-[18px] text-surface-variant mb-0.5">receipt_long</span>
+<span class="text-[9px] font-label-sm text-surface-variant text-center leading-none">Gastos</span>
+</div>
+<!-- Thumbnail 4: Historial -->
+<div class="flex-shrink-0 w-14 h-16 rounded-xl bg-mora-card border border-white/10 flex flex-col items-center justify-center relative cursor-pointer hover:border-white/30 transition-all opacity-70 hover:opacity-100">
+<span class="material-symbols-outlined text-[18px] text-surface-variant mb-0.5">history</span>
+<span class="text-[9px] font-label-sm text-surface-variant text-center leading-none">Historial</span>
+</div>
+<!-- Thumbnail 5: Exportar -->
+<div class="flex-shrink-0 w-14 h-16 rounded-xl bg-mora-card border border-white/10 flex flex-col items-center justify-center relative cursor-pointer hover:border-white/30 transition-all opacity-70 hover:opacity-100">
+<span class="material-symbols-outlined text-[18px] text-surface-variant mb-0.5">ios_share</span>
+<span class="text-[9px] font-label-sm text-surface-variant text-center leading-none">Exportar</span>
+</div>
+</div>
+</section>
+<!-- 4. Bottom Floating Action Bar -->
+<footer class="w-full px-space-md py-4 bg-gradient-to-t from-mora-dark via-mora-dark/95 to-transparent flex items-center justify-between border-t border-white/5 shrink-0 z-30">
+<!-- Counter & Hint -->
+<div class="flex flex-col">
+<span class="font-headline-sm text-xs text-white font-bold leading-tight">2 de 5</span>
+<span class="text-[11px] font-body-sm text-surface-variant/70">Deslizá para navegar</span>
+</div>
+<!-- Action Pill Button (CTA in Lima with Mora text) -->
+<a class="inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-xs font-bold shadow-md hover:bg-secondary-fixed-dim active:scale-95 transition-all" href="#probar-juntadita">
+<span>Abrir app</span>
+<span class="material-symbols-outlined text-[16px] font-bold">north_east</span>
+</a>
+</footer>
+</main>
+</body></html>

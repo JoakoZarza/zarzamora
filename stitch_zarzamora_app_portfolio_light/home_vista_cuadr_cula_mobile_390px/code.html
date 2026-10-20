@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zarzamora - Tienda personal de apps de Joako Zarza</title>
+<!-- Google Fonts: Bricolage Grotesque & Hanken Grotesk (Strictly Sans-Serif) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#fcebff",
+            "background": "#fff7fc",
+            "on-tertiary-fixed": "#261a00",
+            "surface-variant": "#f5d9ff",
+            "secondary-container": "#c4f33c",
+            "surface-container-high": "#f8e0ff",
+            "on-surface-variant": "#4b4453",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#d6baff",
+            "tertiary-fixed-dim": "#f6be39",
+            "surface-dim": "#f0ceff",
+            "tertiary-container": "#6c4f00",
+            "surface-container-low": "#feefff",
+            "surface": "#fff7fc",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#a9d619",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#546d00",
+            "inverse-surface": "#3f264d",
+            "on-primary-container": "#d7bcff",
+            "on-primary-fixed-variant": "#5e16b5",
+            "on-primary": "#ffffff",
+            "primary-container": "#6b2bc2",
+            "on-error-container": "#93000a",
+            "surface-container": "#fbe8ff",
+            "secondary-fixed": "#c4f33c",
+            "on-background": "#291137",
+            "tertiary-fixed": "#ffdfa0",
+            "surface-tint": "#7639ce",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#cdc3d6",
+            "surface-container-highest": "#f5d9ff",
+            "primary-fixed": "#ecdcff",
+            "secondary": "#4f6600",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#280057",
+            "inverse-primary": "#d6baff",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#f8c03b",
+            "on-secondary-fixed-variant": "#3b4d00",
+            "surface-bright": "#fff7fc",
+            "tertiary": "#4f3900",
+            "outline": "#7c7485",
+            "primary": "#5200a7",
+            "on-secondary-fixed": "#161f00",
+            "on-surface": "#291137"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Bricolage Grotesque", "sans-serif"],
+            "label-md": ["Hanken Grotesk", "sans-serif"],
+            "headline-lg-mobile": ["Bricolage Grotesque", "sans-serif"],
+            "body-lg": ["Hanken Grotesk", "sans-serif"],
+            "body-sm": ["Hanken Grotesk", "sans-serif"],
+            "headline-sm": ["Bricolage Grotesque", "sans-serif"],
+            "body-md": ["Hanken Grotesk", "sans-serif"],
+            "display-hero-mobile": ["Bricolage Grotesque", "sans-serif"],
+            "headline-md": ["Bricolage Grotesque", "sans-serif"],
+            "label-lg": ["Hanken Grotesk", "sans-serif"],
+            "display-hero": ["Bricolage Grotesque", "sans-serif"],
+            "label-sm": ["Hanken Grotesk", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "800" }],
+            "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .squircle {
+      border-radius: 22%;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container min-h-screen pb-24">
+<!-- Mobile Viewport Shell (390px bounded container) -->
+<div class="max-w-[390px] mx-auto min-h-screen bg-surface border-x border-outline-variant relative shadow-sm">
+<!-- 1. TopAppBar (Shared Component Source of Truth) -->
+<header class="docked full-width top-0 sticky z-40 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center w-full px-margin-mobile py-space-sm max-w-[390px] mx-auto">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Menú" class="p-space-xs rounded-full text-on-surface hover:bg-surface-container dark:hover:bg-surface-variant active:-translate-y-0.5 transition-transform duration-150 flex items-center justify-center" type="button">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<a class="flex items-center gap-2 pl-1 group" href="#">
+<img alt="Zarzamora Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X77ksTwzdf4GpPCVFjYC5h_WMcUS3A2QrpwmSLWs9pQ1Iz6zWVhPrND_h5NZCACKGzsHUWRnVzZFh4y-5MZSoLPlMyYO2W8v3KG_3kSt92cG_ykzzPhKYEdcoJ-twZMolLJLAd03abhNeL7cHhPuQH8HfS2li2_9aXv1zLEYBmh6YNGJ4JhjJWcF5R-AdH2AlHa0BtCmEmVbI5wSbwUHAY0I8dVF89ta5wED2ImydVUsASJOSytieiSKXQ"/>
+</a>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Buscar apps" class="p-space-xs rounded-full text-on-surface hover:bg-surface-container dark:hover:bg-surface-variant active:-translate-y-0.5 transition-transform duration-150 flex items-center justify-center" type="button">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile pt-space-md flex flex-col gap-space-xl">
+<!-- 2. Hero Section -->
+<section class="flex flex-col gap-space-md">
+<!-- Tag Chip -->
+<div class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full bg-surface-container border border-outline-variant text-primary font-label-md text-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+          Laboratorio de software artesanal · 2026
+        </div>
+<!-- Headline & Copy -->
+<div class="flex flex-col gap-space-sm">
+<h1 class="font-display-hero-mobile text-display-hero-mobile text-on-surface tracking-tight">
+            Apps que hago con IA, una por una.
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Soy Joako Zarza. Diseño y construyo apps web y Android con vibe coding. Probalas en el navegador o descargá el APK.
+          </p>
+</div>
+<!-- Primary Lima CTA Button -->
+<a class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-surface font-label-lg text-label-lg py-3 px-6 rounded-full text-center active:-translate-y-0.5 transition-all duration-150 flex items-center justify-center gap-2 font-semibold border border-secondary-fixed-dim" href="#catalogo">
+<span>Ver todas las apps</span>
+<span class="material-symbols-outlined" data-icon="arrow_downward">arrow_downward</span>
+</a>
+<!-- Visual: Tight circular cluster of app icon badges in blackberry shape with leaf on top -->
+<div class="relative py-4 flex flex-col items-center justify-center">
+<!-- Leaf on top -->
+<div class="w-5 h-5 rounded-tr-full rounded-bl-full bg-secondary-fixed-dim transform -rotate-45 mb-1.5 border border-secondary"></div>
+<!-- Blackberry cluster (Bubbles with icons) -->
+<div class="flex flex-col items-center gap-1.5">
+<div class="flex gap-1.5">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center squircle border border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="restaurant">restaurant</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-inverse-surface text-on-secondary-container flex items-center justify-center squircle border border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="directions_run">directions_run</span>
+</div>
+</div>
+<div class="flex gap-1.5">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-primary flex items-center justify-center squircle border border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="security">security</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center squircle border border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="view_in_ar">view_in_ar</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center squircle border border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="fitness_center">fitness_center</span>
+</div>
+</div>
+<div class="flex gap-1.5">
+<div class="w-9 h-9 rounded-full bg-inverse-surface text-secondary-container flex items-center justify-center squircle border border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center squircle border border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. App destacada (Featured Card) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Selección del mes</span>
+<span class="text-on-secondary-container bg-secondary-fixed text-label-sm font-label-sm px-2 py-0.5 rounded-full font-bold">VIBE CODED</span>
+</div>
+<!-- Featured Card Container -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-space-lg flex flex-col gap-space-md">
+<!-- Top Row: Icon + Badges -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 bg-primary-container text-on-primary squircle flex items-center justify-center font-headline-md text-headline-md border border-outline-variant">
+<span class="material-symbols-outlined text-[28px]" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Juntadita</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">Destacada</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Web · PWA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Description -->
+<p class="font-body-md text-body-md text-on-surface">
+            Dividí los gastos del asado sin pelearte con nadie. Cargás los tickets, asignás quién consumió qué y te calcula las transferencias exactas al toque.
+          </p>
+<!-- Mini Balance Preview Widget -->
+<div class="bg-surface-container-low rounded-DEFAULT p-3 border border-outline-variant flex flex-col gap-2">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Asado de amigos (5 personas)</span>
+<span class="text-secondary font-bold">Resuelto ✓</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm border-t border-outline-variant pt-1.5">
+<span class="text-on-surface">Joako pagó la carne</span>
+<span class="font-semibold text-primary">$42.500</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Martín le transfiere a Joako</span>
+<span class="font-bold text-on-surface">$8.500</span>
+</div>
+</div>
+<!-- Action Shelf -->
+<div class="pt-space-xs flex gap-2">
+<a class="flex-1 bg-secondary-container hover:bg-secondary-fixed text-on-surface font-label-md text-label-md py-2.5 px-4 rounded-full text-center font-bold active:-translate-y-0.5 transition-transform border border-secondary-fixed-dim flex items-center justify-center gap-1.5" href="#">
+<span>Abrir app</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="open_in_new">open_in_new</span>
+</a>
+<a aria-label="Ver código" class="px-3 py-2.5 rounded-full border border-outline-variant text-on-surface hover:bg-surface-container text-label-md font-label-md flex items-center justify-center active:-translate-y-0.5 transition-transform" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="code">code</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 4. Catálogo de apps (Vista Cuadrícula Mobile) -->
+<section class="flex flex-col gap-space-md" id="catalogo">
+<!-- Section Header + View Toggle -->
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Todas las apps</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">10 proyectos activos y experimentales</p>
+</div>
+<!-- Toggle View Buttons -->
+<div class="flex items-center p-0.5 bg-surface-container rounded-full border border-outline-variant">
+<button aria-label="Vista cuadrícula" class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary shadow-xs flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="grid_view">grid_view</span>
+</button>
+<button aria-label="Vista lista" class="w-8 h-8 rounded-full text-on-surface-variant hover:text-primary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="view_list">view_list</span>
+</button>
+</div>
+</div>
+<!-- Filter Pill Chips Horizontal Scroll -->
+<div class="flex gap-2 overflow-x-auto hide-scrollbar -mx-margin-mobile px-margin-mobile pb-1">
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md whitespace-nowrap active:-translate-y-0.5 transition-all" type="button">
+            Todas (10)
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md whitespace-nowrap hover:bg-surface-container active:-translate-y-0.5 transition-all" type="button">
+            Web
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md whitespace-nowrap hover:bg-surface-container active:-translate-y-0.5 transition-all" type="button">
+            Android
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md whitespace-nowrap hover:bg-surface-container active:-translate-y-0.5 transition-all" type="button">
+            En desarrollo
+          </button>
+</div>
+<!-- Category Tags Mini Bar -->
+<div class="flex flex-wrap gap-1.5">
+<span class="text-label-sm font-label-sm bg-surface-container text-primary px-2.5 py-0.5 rounded-full">#Finanzas</span>
+<span class="text-label-sm font-label-sm bg-surface-container text-primary px-2.5 py-0.5 rounded-full">#Productividad</span>
+<span class="text-label-sm font-label-sm bg-surface-container text-primary px-2.5 py-0.5 rounded-full">#Fitness</span>
+<span class="text-label-sm font-label-sm bg-surface-container text-primary px-2.5 py-0.5 rounded-full">#Herramientas3D</span>
+</div>
+<!-- 2-Column Mobile Grid of App Cards -->
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<!-- Card 1: Juntadita -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 flex flex-col justify-between hover:border-primary transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 bg-primary-container text-on-primary squircle flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="groups">groups</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-secondary font-bold">Web · Estable</span>
+<h3 class="font-headline-sm text-[16px] leading-tight text-on-surface mt-0.5">Juntadita</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-1">División de gastos colectivos sin vueltas.</p>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-outline-variant flex justify-between items-center">
+<a class="text-primary font-label-sm text-label-sm font-bold flex items-center gap-0.5 hover:underline" href="#">
+                Probala
+                <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</a>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="star">star</span>
+</div>
+</article>
+<!-- Card 2: Por Dónde Empiezo -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 flex flex-col justify-between hover:border-primary transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 bg-surface-container text-primary squircle flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="explore">explore</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-secondary font-bold">Web · Estable</span>
+<h3 class="font-headline-sm text-[16px] leading-tight text-on-surface mt-0.5">Por Dónde Empiezo</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-1">Mapas de ruta para arrancar a programar hoy.</p>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-outline-variant flex justify-between items-center">
+<a class="text-primary font-label-sm text-label-sm font-bold flex items-center gap-0.5 hover:underline" href="#">
+                Probala
+                <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</a>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="star">star</span>
+</div>
+</article>
+<!-- Card 3: Cali Go! -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 flex flex-col justify-between hover:border-primary transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 bg-secondary-fixed text-on-surface squircle flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="timer">timer</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-tertiary font-bold">Web · Beta</span>
+<h3 class="font-headline-sm text-[16px] leading-tight text-on-surface mt-0.5">Cali Go!</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-1">Temporizador de intervalos para calistenia.</p>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-outline-variant flex justify-between items-center">
+<a class="text-primary font-label-sm text-label-sm font-bold flex items-center gap-0.5 hover:underline" href="#">
+                Probala
+                <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</a>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="star">star</span>
+</div>
+</article>
+<!-- Card 4: Train -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 flex flex-col justify-between hover:border-primary transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 bg-inverse-surface text-secondary-container squircle flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="fitness_center">fitness_center</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-tertiary font-bold">Android · Beta</span>
+<h3 class="font-headline-sm text-[16px] leading-tight text-on-surface mt-0.5">Train</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-1">Bitácora mínima de sobrecarga progresiva.</p>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-outline-variant flex justify-between items-center">
+<a class="text-primary font-label-sm text-label-sm font-bold flex items-center gap-0.5 hover:underline" href="#">
+                APK
+                <span class="material-symbols-outlined text-[14px]" data-icon="download">download</span>
+</a>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="star">star</span>
+</div>
+</article>
+<!-- Card 5: Escudo PyME -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 flex flex-col justify-between hover:border-primary transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 bg-surface-container text-primary-container squircle flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="shield">shield</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-outline font-bold">Android · En des.</span>
+<h3 class="font-headline-sm text-[16px] leading-tight text-on-surface mt-0.5">Escudo PyME</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-1">Diagnóstico rápido de seguridad digital.</p>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-outline-variant flex justify-between items-center">
+<span class="text-outline text-label-sm font-label-sm">Próximamente</span>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+</article>
+<!-- Card 6: Presupuest3D -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 flex flex-col justify-between hover:border-primary transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 bg-primary-container text-on-primary squircle flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="view_in_ar">view_in_ar</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-secondary font-bold">Web · Estable</span>
+<h3 class="font-headline-sm text-[16px] leading-tight text-on-surface mt-0.5">Presupuest3D</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-1">Cotizá impresiones 3D por filamento y watts.</p>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-outline-variant flex justify-between items-center">
+<a class="text-primary font-label-sm text-label-sm font-bold flex items-center gap-0.5 hover:underline" href="#">
+                Probala
+                <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</a>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="star">star</span>
+</div>
+</article>
+<!-- Card 7: Kawaii Prompt -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 flex flex-col justify-between hover:border-primary transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 bg-surface-container text-primary squircle flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-secondary font-bold">Web · Estable</span>
+<h3 class="font-headline-sm text-[16px] leading-tight text-on-surface mt-0.5">Kawaii Prompt</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-1">Generador visual de prompts con stickers.</p>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-outline-variant flex justify-between items-center">
+<a class="text-primary font-label-sm text-label-sm font-bold flex items-center gap-0.5 hover:underline" href="#">
+                Probala
+                <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</a>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="star">star</span>
+</div>
+</article>
+<!-- Card 8: Roll-O-Meter -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 flex flex-col justify-between hover:border-primary transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 bg-secondary-fixed text-on-surface squircle flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="casino">casino</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-tertiary font-bold">Android · Beta</span>
+<h3 class="font-headline-sm text-[16px] leading-tight text-on-surface mt-0.5">Roll-O-Meter</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-1">Tiradas de dados para juegos de rol.</p>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-outline-variant flex justify-between items-center">
+<a class="text-primary font-label-sm text-label-sm font-bold flex items-center gap-0.5 hover:underline" href="#">
+                APK
+                <span class="material-symbols-outlined text-[14px]" data-icon="download">download</span>
+</a>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="star">star</span>
+</div>
+</article>
+<!-- Card 9: Orbit -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 flex flex-col justify-between hover:border-primary transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 bg-inverse-surface text-on-primary squircle flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="satellite_alt">satellite_alt</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-outline font-bold">Android · En des.</span>
+<h3 class="font-headline-sm text-[16px] leading-tight text-on-surface mt-0.5">Orbit</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-1">Seguimiento de pases de satélites visibles.</p>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-outline-variant flex justify-between items-center">
+<span class="text-outline text-label-sm font-label-sm">Próximamente</span>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+</article>
+<!-- Card 10: Trazo Fit -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-3 flex flex-col justify-between hover:border-primary transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 bg-primary-container text-on-primary squircle flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="draw">draw</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-tertiary font-bold">Web · Beta</span>
+<h3 class="font-headline-sm text-[16px] leading-tight text-on-surface mt-0.5">Trazo Fit</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-1">Dibuja rutas de running directamente en el mapa.</p>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-outline-variant flex justify-between items-center">
+<a class="text-primary font-label-sm text-label-sm font-bold flex items-center gap-0.5 hover:underline" href="#">
+                Probala
+                <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</a>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="star">star</span>
+</div>
+</article>
+</div>
+</section>
+<!-- 5. Sobre mí (Mobile Card) -->
+<section class="bg-inverse-surface text-surface rounded-DEFAULT p-space-lg flex flex-col gap-space-md border border-outline">
+<div class="flex items-center gap-space-md">
+<!-- Round Avatar Photo -->
+<div class="relative w-14 h-14 rounded-full overflow-hidden shrink-0 border-2 border-secondary-container">
+<img class="w-full h-full object-cover" data-alt="A warm, candid portrait of an Argentine independent software maker in his late twenties with short dark hair and a genuine smile, sitting in a natural daylight studio with cozy maker vibes, warm wooden desk, and a subtle purple mug." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWbJ_MsSYK-__t_H_UVDsAJ_p3k-lRUQ2HveQVbywDbvwSb1LehP-j8vaYRsq4QloHvo0XIrVzgVNsSO8AP268WkOQaJ8Q2EK78H_T3IFOYX2luhWcCAwgwHzyh8uiY68LtYF6ujvzRijpH8gr_uH7IxMb_F1gkJzF91nd7yXp-bVVztujKINkl-xoHxauY0jUGKyrWUDNHs0I7VDovzoLH0tQt73E2n0U8tcMGpIOu2KNBL1qwpewiQ"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-inverse-on-surface">Joako Zarza</h3>
+<p class="font-label-sm text-label-sm text-primary-fixed-dim">Creador independiente · Argentina</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-surface-variant">
+          Soy Joako, de Argentina. Hago apps chicas que resuelven problemas concretos con IA. Uso prompts estructurados, prototipado ultra-rápido y mucho mate.
+        </p>
+<!-- Tool Chips -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-surface-container/20 text-inverse-on-surface text-label-sm font-label-sm border border-outline-variant/30">Claude Code</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container/20 text-inverse-on-surface text-label-sm font-label-sm border border-outline-variant/30">Gemini</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container/20 text-inverse-on-surface text-label-sm font-label-sm border border-outline-variant/30">Antigravity</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container/20 text-inverse-on-surface text-label-sm font-label-sm border border-outline-variant/30">React</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container/20 text-inverse-on-surface text-label-sm font-label-sm border border-outline-variant/30">Flutter</span>
+</div>
+<div class="pt-2">
+<a class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-surface font-label-md text-label-md py-3 px-6 rounded-full text-center font-bold active:-translate-y-0.5 transition-all flex items-center justify-center gap-2" href="mailto:hola@zarzamora.app">
+<span>Escribime</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="mail">mail</span>
+</a>
+</div>
+</section>
+<!-- 6. Footer (Shared Component Source of Truth) -->
+<footer class="w-full mb-20 border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col items-center text-center px-margin-mobile py-space-xl gap-space-md w-full max-w-[390px] mx-auto">
+<!-- Logo text -->
+<span class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Zarzamora</span>
+<!-- Copyright text with Argentine touch -->
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Hecho por Joako Zarza con mucho café e IA · 2026 Zarzamora. Software libre y mate.
+          </p>
+<!-- Links -->
+<div class="flex flex-wrap justify-center gap-x-4 gap-y-2 pt-1 font-label-sm text-label-sm">
+<a class="text-primary dark:text-inverse-primary font-bold hover:underline" href="#catalogo">Apps</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary underline" href="#">Sobre mí</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary underline" href="#">Contacto</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary underline" href="#">GitHub</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar (Shared Component Source of Truth) -->
+<!-- Active tab logic: This is the Home / Apps catalog top-level screen, so "Apps" is active -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="fixed bottom-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs max-w-[390px] mx-auto bg-surface-container-lowest dark:bg-inverse-surface">
+<!-- Tab 1: Apps (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-space-md py-space-xs font-label-sm text-label-sm transition-transform active:-translate-y-0.5" href="#catalogo">
+<span class="material-symbols-outlined text-[20px]" data-icon="apps">apps</span>
+<span class="mt-0.5">Apps</span>
+</a>
+<!-- Tab 2: Lanzamientos -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-sm py-space-xs font-label-sm text-label-sm hover:text-primary dark:hover:text-inverse-primary transition-transform active:-translate-y-0.5" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="rocket_launch">rocket_launch</span>
+<span class="mt-0.5">Lanzamientos</span>
+</a>
+<!-- Tab 3: Favoritos -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-sm py-space-xs font-label-sm text-label-sm hover:text-primary dark:hover:text-inverse-primary transition-transform active:-translate-y-0.5" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+<span class="mt-0.5">Favoritos</span>
+</a>
+<!-- Tab 4: Autor -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-space-sm py-space-xs font-label-sm text-label-sm hover:text-primary dark:hover:text-inverse-primary transition-transform active:-translate-y-0.5" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="person">person</span>
+<span class="mt-0.5">Autor</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>
