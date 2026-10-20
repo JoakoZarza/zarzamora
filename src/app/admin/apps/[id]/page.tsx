@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ExternalLink, LoaderCircle, Save, Trash2 } from "lucide-react";
+import { ChevronLeft, Download, ExternalLink, LoaderCircle, Save, Trash2 } from "lucide-react";
+import { fetchAppInfo } from "@/app/admin/actions";
 import { useAdmin, Field } from "@/components/admin/AdminShell";
 import { DropZone, ListEditor, Section, Segmented, TagEditor, Toggle } from "@/components/admin/Fields";
 import { MediaManager } from "@/components/admin/MediaManager";
@@ -21,6 +22,7 @@ export default function AppEditor() {
   const [draft, setDraft] = useState<AppRow | null>(null);
   const [saving, setSaving] = useState(false);
   const [slugTouched, setSlugTouched] = useState(false);
+  const [importing, setImporting] = useState(false);
 
   useEffect(() => {
     sb.from("apps")
@@ -96,6 +98,26 @@ export default function AppEditor() {
     } catch (e) {
       toast((e as Error).message, "error");
     }
+  }
+
+  /** Trae el ícono, el color y la descripción desde la app publicada. */
+  async function importFromApp(quiet = false) {
+    if (!draft?.web_url) return;
+    setImporting(true);
+    const { data } = await sb.auth.getSession();
+    const info = await fetchAppInfo(data.session?.access_token ?? "", draft.web_url);
+    setImporting(false);
+    if (!info) return quiet || toast("No pude leer esa dirección", "error");
+    setDraft((d) => {
+      if (!d) return d;
+      const next = { ...d };
+      if (info.iconUrl) next.icon_url = info.iconUrl;
+      if (info.color && /^#[0-9a-f]{6}$/i.test(info.color)) next.color = info.color;
+      if (!d.tagline && info.description) next.tagline = info.description;
+      return next;
+    });
+    if (info.iconUrl) toast("Ícono traído de la app. Guardá los cambios para publicarlo.");
+    else if (!quiet) toast("La app no tiene un ícono publicado. Subilo a mano.", "error");
   }
 
   async function uploadApk(files: File[]) {
@@ -207,7 +229,10 @@ export default function AppEditor() {
           </div>
         </Section>
 
-        <Section title="Ícono y color" description="PNG o JPG cuadrado, de 512 × 512 px. El color se usa cuando no hay ícono.">
+        <Section
+          title="Ícono y color"
+          description="PNG o JPG cuadrado, de 512 × 512 px. En las apps web se trae solo al pegar el enlace. El color se usa cuando no hay ícono."
+        >
           <div className="flex items-center gap-5">
             <AppIcon app={draft} size={96} />
             <DropZone accept="image/png,image/jpeg,image/webp,image/svg+xml" onFiles={uploadIcon} className="h-28 flex-1">
@@ -252,10 +277,20 @@ export default function AppEditor() {
                   type="url"
                   value={draft.web_url}
                   onChange={(e) => set("web_url", e.target.value)}
+                  onBlur={() => !draft.icon_url && importFromApp(true)}
                   placeholder="https://"
                   className="input"
                 />
               </Field>
+              <button
+                type="button"
+                onClick={() => importFromApp()}
+                disabled={!draft.web_url || importing}
+                className="inline-flex h-10 w-fit items-center gap-2 rounded-full border border-line px-4 text-sm font-semibold hover:bg-soft disabled:opacity-50"
+              >
+                {importing ? <LoaderCircle size={16} className="animate-spin" aria-hidden /> : <Download size={16} aria-hidden />}
+                Traer ícono y color desde la app
+              </button>
               <div className="flex flex-wrap gap-x-8">
                 <Toggle checked={draft.is_pwa} onChange={(v) => set("is_pwa", v)} label="Se puede instalar (PWA)" />
                 <Toggle checked={draft.works_offline} onChange={(v) => set("works_offline", v)} label="Funciona sin internet" />

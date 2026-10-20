@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import type { Session, SupabaseClient } from "@supabase/supabase-js";
-import { ExternalLink, LayoutGrid, LoaderCircle, LogOut, Type } from "lucide-react";
+import { ExternalLink, LayoutGrid, LoaderCircle, LogOut, RefreshCw, Type } from "lucide-react";
 import { refreshSite } from "@/app/admin/actions";
 import { BerryMark } from "@/components/site/Logo";
 import { browserSupabase, isSupabaseConfigured } from "@/lib/supabase";
@@ -90,6 +90,17 @@ function Shell({ sb, session, children }: { sb: SupabaseClient; session: Session
     }, 800);
   }, [sb, toast]);
 
+  const [refreshing, setRefreshing] = useState(false);
+
+  // Para cambios hechos fuera del panel (por ejemplo, desde el SQL Editor de Supabase)
+  async function refreshNow() {
+    setRefreshing(true);
+    const { data } = await sb.auth.getSession();
+    const res = await refreshSite(data.session?.access_token ?? "");
+    setRefreshing(false);
+    toast(res.ok ? "Sitio actualizado" : "No se pudo actualizar el sitio", res.ok ? "ok" : "error");
+  }
+
   const nav = [
     { href: "/admin", label: "Apps", icon: LayoutGrid, active: pathname === "/admin" || pathname.startsWith("/admin/apps") },
     { href: "/admin/sitio", label: "Textos del sitio", icon: Type, active: pathname === "/admin/sitio" },
@@ -117,6 +128,15 @@ function Shell({ sb, session, children }: { sb: SupabaseClient; session: Session
               ))}
             </nav>
             <div className="ml-auto flex items-center gap-1">
+              <button
+                onClick={refreshNow}
+                disabled={refreshing}
+                title="Muestra en el sitio los cambios hechos fuera del panel"
+                className="inline-flex h-10 items-center gap-2 rounded-full px-4 text-sm font-semibold hover:bg-soft disabled:opacity-60"
+              >
+                <RefreshCw size={17} className={refreshing ? "animate-spin" : ""} aria-hidden />
+                <span className="max-md:hidden">Actualizar sitio</span>
+              </button>
               <a href="/" target="_blank" className="inline-flex h-10 items-center gap-2 rounded-full px-4 text-sm font-semibold hover:bg-soft">
                 <ExternalLink size={17} aria-hidden /> <span className="max-sm:hidden">Ver sitio</span>
               </a>
