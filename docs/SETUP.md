@@ -20,7 +20,7 @@ Sin configurar nada, el sitio funciona con las apps de ejemplo. Para usar el pan
 1. En Supabase: **Project Settings → API Keys**. Copiá la *Project URL* y la *Publishable key*.
 2. En la carpeta del proyecto, copiá `.env.example` como `.env.local` y pegá los valores.
 3. Reiniciá el servidor (`npm run dev`) y entrá a [localhost:3000/admin](http://localhost:3000/admin).
-4. Con la base vacía, el panel te ofrece **Importar apps de ejemplo** para no arrancar de cero.
+4. Con la base vacía, el panel te ofrece **Importar apps de ejemplo** para no arrancar de cero. Otra opción es ejecutar [`supabase/seed.sql`](../supabase/seed.sql) en el SQL Editor.
 
 ## 3. Publicar en internet (Vercel, gratis)
 
