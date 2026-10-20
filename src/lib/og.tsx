@@ -1,4 +1,5 @@
 import { HEIGHT, LEAF_SPACE, R, WIDTH, placeApps, spots } from "./berry";
+import { siteUrl } from "./site";
 import type { App } from "./types";
 
 // Piezas compartidas de las imágenes para compartir (1200 × 630).
@@ -38,7 +39,7 @@ export async function ogFonts() {
 export function absoluteUrl(url: string): string | null {
   if (!url) return null;
   if (/^https?:\/\//.test(url)) return url;
-  const site = process.env.NEXT_PUBLIC_SITE_URL;
+  const site = siteUrl();
   return site ? `${site}${url.startsWith("/") ? "" : "/"}${url}` : null;
 }
 

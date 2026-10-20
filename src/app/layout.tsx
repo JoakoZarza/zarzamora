@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"], weight: ["600", "700", "800"] });
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   description: "Apps web y Android diseñadas y desarrolladas por Joako Zarza. Probalas en el navegador o descargá el APK.",
   openGraph: { siteName: "Zarzamora", locale: "es_AR", type: "website" },
   twitter: { card: "summary_large_image" },
-  metadataBase: process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL) : undefined,
+  metadataBase: siteUrl() ? new URL(siteUrl()!) : undefined,
 };
 
 export const viewport: Viewport = {

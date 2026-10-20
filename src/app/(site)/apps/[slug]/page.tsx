@@ -11,6 +11,7 @@ import { MediaGallery } from "@/components/site/MediaGallery";
 import { QrCode } from "@/components/site/QrCode";
 import { getApp, getCatalog } from "@/lib/data";
 import { formatDate, primaryAction } from "@/lib/format";
+import { siteUrl } from "@/lib/site";
 import type { App } from "@/lib/types";
 
 export async function generateStaticParams() {
@@ -235,9 +236,8 @@ async function AppDetail({ params }: { params: PageProps<"/apps/[slug]">["params
 function qrFor(app: App): string | null {
   const action = primaryAction(app);
   if (!action.href) return null;
-  if (app.platform === "android" && process.env.NEXT_PUBLIC_SITE_URL) {
-    return `${process.env.NEXT_PUBLIC_SITE_URL}/apps/${app.slug}`;
-  }
+  const site = siteUrl();
+  if (app.platform === "android" && site) return `${site}/apps/${app.slug}`;
   return action.href.startsWith("http") ? action.href : null;
 }
 
