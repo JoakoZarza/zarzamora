@@ -8,6 +8,8 @@ const hanken = Hanken_Grotesk({ variable: "--font-hanken", subsets: ["latin"] })
 export const metadata: Metadata = {
   title: { default: "Zarzamora — apps de Joako Zarza", template: "%s | Zarzamora" },
   description: "Apps web y Android diseñadas y desarrolladas por Joako Zarza. Probalas en el navegador o descargá el APK.",
+  openGraph: { siteName: "Zarzamora", locale: "es_AR", type: "website" },
+  twitter: { card: "summary_large_image" },
   metadataBase: process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL) : undefined,
 };
 

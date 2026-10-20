@@ -15,7 +15,8 @@ import type { App } from "@/lib/types";
 
 export async function generateStaticParams() {
   const apps = await getCatalog();
-  return apps.map((a) => ({ slug: a.slug }));
+  // Con Cache Components tiene que haber al menos uno; sin apps, esa ruta da "no encontrada".
+  return apps.length ? apps.map((a) => ({ slug: a.slug })) : [{ slug: "sin-apps" }];
 }
 
 export async function generateMetadata({ params }: PageProps<"/apps/[slug]">): Promise<Metadata> {
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: PageProps<"/apps/[slug]">): P
   return {
     title: app.name,
     description: app.tagline,
-    openGraph: { title: app.name, description: app.tagline, images: app.icon_url ? [app.icon_url] : undefined },
+    openGraph: { title: app.name, description: app.tagline, siteName: "Zarzamora", locale: "es_AR", type: "website" },
   };
 }
 

@@ -1,38 +1,12 @@
 import Link from "next/link";
 import type { App } from "@/lib/types";
+import { HEIGHT, LEAF_SPACE, R, WIDTH, placeApps, spots } from "@/lib/berry";
 import { AppIcon } from "./AppIcon";
-
-// La mora de la portada: cada drupa es una app; las que sobran son fruta.
-const ROWS = [3, 4, 5, 4, 3, 2];
-const R = 1;
-const ROW_H = Math.sqrt(3) * R;
-const LEAF_SPACE = 2.4;
-const WIDTH = 10 * R;
-const HEIGHT = LEAF_SPACE + (ROWS.length - 1) * ROW_H + 2 * R;
-
-type Spot = { x: number; y: number; scale: number };
-
-const spots: Spot[] = ROWS.flatMap((n, row) =>
-  Array.from({ length: n }, (_, k) => ({
-    x: WIDTH / 2 + (k - (n - 1) / 2) * 2 * R,
-    y: LEAF_SPACE + R + row * ROW_H,
-    // variación chica y fija para que no se vea de molde
-    scale: 0.9 + (((row * 7 + k * 13) % 5) / 5) * 0.1,
-  })),
-);
-
-const center = { x: WIDTH / 2, y: LEAF_SPACE + R + ROW_H * 2 };
-const byCloseness = spots
-  .map((s, i) => ({ i, d: Math.hypot(s.x - center.x, (s.y - center.y) * 1.1) }))
-  .sort((a, b) => a.d - b.d)
-  .map((s) => s.i);
 
 const fillers = ["var(--drupe-a)", "var(--drupe-b)", "var(--drupe-c)"];
 
 export function Blackberry({ apps }: { apps: App[] }) {
-  const shown = apps.slice(0, 12);
-  const appAt = new Map<number, App>();
-  shown.forEach((app, n) => appAt.set(byCloseness[n], app));
+  const appAt = placeApps(apps);
 
   return (
     <div
